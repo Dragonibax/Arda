@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.escom.ipn.Arda.Controllers;
+package com.escom.ipn.Arda.Controladores;
 
+import com.escom.ipn.Arda.Modelos.Estadisticas;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,8 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api")
-public class EstadisticasController {
-    
+public class EstadisticasControlador {
     /*Retorna un historial de estadisticas*/
     @GetMapping("/estadisticas")
     public List getEstadisticas(){
@@ -31,9 +31,14 @@ public class EstadisticasController {
     }
     
     /*Retorna la Ultima estadistica registrada*/
-    @GetMapping("/Estadistica")
-    public String getEstadistica(){
-        return ":0";
+    @GetMapping("/estadistica")
+    public Estadisticas getEstadistica(){
+        Estadisticas ultimaEstadistica = new Estadisticas();
+        ultimaEstadistica.setCalefaccion("Media");
+        ultimaEstadistica.setHora("12 PM");
+        ultimaEstadistica.setHumedad("seco");
+        ultimaEstadistica.setIluminacion("10 lumens");
+        return ultimaEstadistica;
     }
     
     /*agrega una nueva estadistica al historial*/
