@@ -13,9 +13,8 @@ import org.springframework.stereotype.Service;
  *
  * @author DEZKS
  */
-@Service
 public interface IEstadisticasServicio {
     public List<Estadisticas> obtenerEstadisticas();
-    public Estadisticas obtenerUltimaEstdistica();
-    public Estadisticas registraEstadistica();
+    public Estadisticas obtenerUltimaEstadistica();
+    public Estadisticas registraEstadistica(Estadisticas recoleccion);
 }
