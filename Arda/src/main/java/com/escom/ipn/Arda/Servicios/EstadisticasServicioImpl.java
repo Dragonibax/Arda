@@ -6,6 +6,7 @@
 package com.escom.ipn.Arda.Servicios;
 
 import com.escom.ipn.Arda.Modelos.Estadisticas;
+import com.escom.ipn.Arda.Repositorios.IEstadisticasRepositorio;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,17 +19,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class EstadisticasServicioImpl implements IEstadisticasServicio{
     
+    @Autowired
+    private IEstadisticasRepositorio repositorio;
+    
     @Override
     public List<Estadisticas> obtenerEstadisticas() {
-        List<Estadisticas> estadisticas =new ArrayList();
-        Estadisticas STAT = new Estadisticas();
-        STAT.setTemperatura("CAlido");
-        STAT.setHora("10pm");
-        STAT.setIluminacion("40");
-        estadisticas.add(STAT);
-        STAT.setCalefaccion("Activa");
-        estadisticas.add(STAT);
-        return estadisticas;
+        return repositorio.findAll();
     }
 
     @Override
@@ -43,7 +39,7 @@ public class EstadisticasServicioImpl implements IEstadisticasServicio{
 
     @Override
     public Estadisticas registraEstadistica(Estadisticas recoleccion) {
-        return recoleccion;
+        return repositorio.insert(recoleccion);
     }
     
 }
