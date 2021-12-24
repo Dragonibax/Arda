@@ -16,7 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Estadisticas {
     
     @Id
-    private String Id;
+    private String id;
     
     private String Humedad;
     private String Calefaccion;
@@ -56,6 +56,16 @@ public class Estadisticas {
     public String getIluminacion() {
         return Iluminacion;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    
 
     public void setIluminacion(String Iluminacion) {
         this.Iluminacion = Iluminacion;
