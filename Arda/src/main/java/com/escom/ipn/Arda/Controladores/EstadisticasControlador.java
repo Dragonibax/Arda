@@ -34,13 +34,13 @@ public class EstadisticasControlador {
     
     /*Retorna la Ultima estadistica registrada*/
     @GetMapping("/estadistica")
-    public Estadisticas getEstadistica(){
+    public ResponseEntity<Estadisticas> getEstadistica(){
         Estadisticas ultimaEstadistica = new Estadisticas();
         ultimaEstadistica.setCalefaccion("Media");
         ultimaEstadistica.setHora("12 PM");
         ultimaEstadistica.setHumedad("seco");
         ultimaEstadistica.setIluminacion("10 lumens");
-        return ultimaEstadistica;
+        return new ResponseEntity<>(ultimaEstadistica,HttpStatus.OK);
     }
     
     /*agrega una nueva estadistica al historial*/
