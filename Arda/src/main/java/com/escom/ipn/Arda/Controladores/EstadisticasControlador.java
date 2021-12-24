@@ -26,9 +26,14 @@ public class EstadisticasControlador {
     /*Retorna un historial de estadisticas*/
     @GetMapping("/estadisticas")
     public ResponseEntity<List> getEstadisticas(){
-        List estadisticas =new ArrayList();
-        estadisticas.add("Temperatura");
-        estadisticas.add("Humedad");
+        List<Estadisticas> estadisticas =new ArrayList();
+        Estadisticas STAT = new Estadisticas();
+        STAT.setTemperatura("CAlido");
+        STAT.setHora("10pm");
+        STAT.setIluminacion("40");
+        estadisticas.add(STAT);
+        STAT.setCalefaccion("Activa");
+        estadisticas.add(STAT);
         return new ResponseEntity<>(estadisticas,HttpStatus.OK);
     }
     
