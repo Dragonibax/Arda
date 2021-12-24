@@ -5,18 +5,37 @@
  */
 package com.escom.ipn.Arda.Modelos;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  *
  * @author DEZKS
  */
+@Document("Estadisticas")
 public class Estadisticas {
+    
+    @Id
+    private String Id;
+    
     private String Humedad;
     private String Calefaccion;
     private String Iluminacion;
     private String Hora;
+    private String Temperatura;
 
     public Estadisticas() {
     }
+    
+    public String getTemperatura() {
+        return Temperatura;
+    }
+
+    public void setTemperatura(String Temperatura) {
+        this.Temperatura = Temperatura;
+    }
+
+    
 
     public String getHumedad() {
         return Humedad;

@@ -6,8 +6,12 @@
 package com.escom.ipn.Arda.Controladores;
 
 import com.escom.ipn.Arda.Modelos.Estadisticas;
+import com.escom.ipn.Arda.Servicios.IEstadisticasServicio;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,29 +25,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 public class EstadisticasControlador {
+    @Autowired
+    private IEstadisticasServicio servicioEstadisticas;
+    
     /*Retorna un historial de estadisticas*/
     @GetMapping("/estadisticas")
-    public List getEstadisticas(){
-        List estadisticas =new ArrayList();
-        estadisticas.add("Temperatura");
-        estadisticas.add("Humedad");
-        return estadisticas;
+    public ResponseEntity<List> getEstadisticas(){
+        List<Estadisticas> estadisticas = servicioEstadisticas.obtenerEstadisticas();
+        return new ResponseEntity<>(estadisticas,HttpStatus.OK);
     }
     
     /*Retorna la Ultima estadistica registrada*/
     @GetMapping("/estadistica")
-    public Estadisticas getEstadistica(){
-        Estadisticas ultimaEstadistica = new Estadisticas();
-        ultimaEstadistica.setCalefaccion("Media");
-        ultimaEstadistica.setHora("12 PM");
-        ultimaEstadistica.setHumedad("seco");
-        ultimaEstadistica.setIluminacion("10 lumens");
-        return ultimaEstadistica;
+    public ResponseEntity<Estadisticas> getEstadistica(){
+        Estadisticas ultimaEstadistica = servicioEstadisticas.obtenerUltimaEstadistica();
+        return new ResponseEntity<>(ultimaEstadistica,HttpStatus.OK);
     }
     
     /*agrega una nueva estadistica al historial*/
     @PostMapping("/estadistica")
-    public void postEstadistica(){
-        
+    public ResponseEntity<Estadisticas> postEstadistica(@RequestBody Estadisticas stats){
+        return new ResponseEntity<>(servicioEstadisticas.registraEstadistica(stats), HttpStatus.CREATED);
     }
 }
