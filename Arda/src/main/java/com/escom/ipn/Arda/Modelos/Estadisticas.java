@@ -14,9 +14,20 @@ public class Estadisticas {
     private String Calefaccion;
     private String Iluminacion;
     private String Hora;
+    private String Temperatura;
 
     public Estadisticas() {
     }
+    
+    public String getTemperatura() {
+        return Temperatura;
+    }
+
+    public void setTemperatura(String Temperatura) {
+        this.Temperatura = Temperatura;
+    }
+
+    
 
     public String getHumedad() {
         return Humedad;

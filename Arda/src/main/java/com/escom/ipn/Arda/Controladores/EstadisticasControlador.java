@@ -8,6 +8,8 @@ package com.escom.ipn.Arda.Controladores;
 import com.escom.ipn.Arda.Modelos.Estadisticas;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,11 +25,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class EstadisticasControlador {
     /*Retorna un historial de estadisticas*/
     @GetMapping("/estadisticas")
-    public List getEstadisticas(){
+    public ResponseEntity<List> getEstadisticas(){
         List estadisticas =new ArrayList();
         estadisticas.add("Temperatura");
         estadisticas.add("Humedad");
-        return estadisticas;
+        return new ResponseEntity<>(estadisticas,HttpStatus.OK);
     }
     
     /*Retorna la Ultima estadistica registrada*/
@@ -43,7 +45,7 @@ public class EstadisticasControlador {
     
     /*agrega una nueva estadistica al historial*/
     @PostMapping("/estadistica")
-    public void postEstadistica(){
-        
+    public ResponseEntity<Estadisticas> postEstadistica(@RequestBody Estadisticas stats){
+        return new ResponseEntity<>(stats, HttpStatus.CREATED);
     }
 }
