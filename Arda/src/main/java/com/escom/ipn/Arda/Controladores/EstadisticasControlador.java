@@ -36,8 +36,8 @@ public class EstadisticasControlador {
     }
     
     /*Retorna la Ultima estadistica registrada*/
-    @GetMapping("/estadisticas/{User}/{id}")
-    public ResponseEntity<Estadisticas> getEstadistica(@PathVariable String User, @PathVariable String id){
+    @GetMapping("/estadisticas/{Terrario_ID}/{id}")
+    public ResponseEntity<Estadisticas> getEstadistica(@PathVariable String Terrario_ID, @PathVariable String id){
         Estadisticas ultimaEstadistica = servicioEstadisticas.obtenerEstadisticaEspecifica(id);
         return new ResponseEntity<>(ultimaEstadistica,HttpStatus.OK);
     }
