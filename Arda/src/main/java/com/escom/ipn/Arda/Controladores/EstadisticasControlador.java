@@ -38,12 +38,12 @@ public class EstadisticasControlador {
     /*Retorna la Ultima estadistica registrada*/
     @GetMapping("/estadisticas/{User}/{id}")
     public ResponseEntity<Estadisticas> getEstadistica(@PathVariable String User, @PathVariable String id){
-        Estadisticas ultimaEstadistica = servicioEstadisticas.obtenerUltimaEstadistica(id);
+        Estadisticas ultimaEstadistica = servicioEstadisticas.obtenerEstadisticaEspecifica(id);
         return new ResponseEntity<>(ultimaEstadistica,HttpStatus.OK);
     }
     
     /*agrega una nueva estadistica al historial*/
-    @PostMapping("/estadistica")
+    @PostMapping("/estadisticas")
     public ResponseEntity<Estadisticas> postEstadistica(@RequestBody Estadisticas stats){
         return new ResponseEntity<>(servicioEstadisticas.registraEstadistica(stats), HttpStatus.CREATED);
     }

@@ -28,7 +28,7 @@ public class EstadisticasServicioImpl implements IEstadisticasServicio{
     }
 
     @Override
-    public Estadisticas obtenerUltimaEstadistica(String id) {
+    public Estadisticas obtenerEstadisticaEspecifica(String id) {
         Optional<Estadisticas> result = repositorio.findById(id);
         if(result.isPresent()){
             return result.get();
