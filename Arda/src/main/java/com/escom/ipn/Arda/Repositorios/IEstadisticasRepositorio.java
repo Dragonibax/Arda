@@ -29,7 +29,6 @@ public interface IEstadisticasRepositorio extends MongoRepository<Estadisticas,S
     public <S extends Estadisticas> List<S> insert(Iterable<S> entities);
 
     @Override
-    @Query(value="{_id:?0}")
     public Optional<Estadisticas> findById(String id);
     
 }

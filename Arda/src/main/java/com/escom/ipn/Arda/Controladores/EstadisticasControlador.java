@@ -7,7 +7,6 @@ package com.escom.ipn.Arda.Controladores;
 
 import com.escom.ipn.Arda.Modelos.Estadisticas;
 import com.escom.ipn.Arda.Servicios.IEstadisticasServicio;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

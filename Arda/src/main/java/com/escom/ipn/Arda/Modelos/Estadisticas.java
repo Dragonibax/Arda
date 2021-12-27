@@ -19,12 +19,19 @@ public class Estadisticas {
     private String id;
     
     private String Humedad;
-    private String Calefaccion;
     private String Iluminacion;
     private String Hora;
     private String Temperatura;
 
     public Estadisticas() {
+    }
+
+    public Estadisticas(String id, String Humedad, String Iluminacion, String Hora, String Temperatura) {
+        this.id = id;
+        this.Humedad = Humedad;
+        this.Iluminacion = Iluminacion;
+        this.Hora = Hora;
+        this.Temperatura = Temperatura;
     }
     
     public String getTemperatura() {
@@ -43,14 +50,6 @@ public class Estadisticas {
 
     public void setHumedad(String Humedad) {
         this.Humedad = Humedad;
-    }
-
-    public String getCalefaccion() {
-        return Calefaccion;
-    }
-
-    public void setCalefaccion(String Calefaccion) {
-        this.Calefaccion = Calefaccion;
     }
 
     public String getIluminacion() {
