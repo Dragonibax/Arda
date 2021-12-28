@@ -6,11 +6,13 @@
 package com.escom.ipn.Arda.Modelos;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
  * @author DEZKS
  */
+@Document("Usuarios")
 public class Usuarios {
 
     @Id
