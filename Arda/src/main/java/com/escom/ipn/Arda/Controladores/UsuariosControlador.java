@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author DEZKS
  */
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/private")
 public class UsuariosControlador {
     @PostMapping("/usuarios")
     public void postUsuario(){
