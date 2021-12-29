@@ -18,8 +18,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface IEstadisticasRepositorio extends MongoRepository<Estadisticas,String>{
-
-    public List<Estadisticas> findByTerrarios_id(String Terrarios_id);
+    
+    @Query("{ 'TerrariosID' : ?0 }")
+    public List<Estadisticas> findByTerrariosID(String TerrariosID);
 
     @Override
     public <S extends Estadisticas> S insert(S entity);

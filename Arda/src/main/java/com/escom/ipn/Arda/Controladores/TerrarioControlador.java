@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author DEZKS
  */
 @RestController
-@RequestMapping
+@RequestMapping("/api/private")
 public class TerrarioControlador {
     
     @PostMapping("/terrarios")

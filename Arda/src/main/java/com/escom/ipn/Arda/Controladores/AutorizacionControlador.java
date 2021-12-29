@@ -14,16 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
  * @author DEZKS
  */
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/public")
 public class AutorizacionControlador {
     
-    @PostMapping("/login")
+    @PostMapping("/inicarsesion")
     public void Login(){
         
     }
     
-    @PostMapping("/logout")
-    public void Logout(){
+    @PostMapping("/registrar")
+    public void Registrar(){
         
     }
     

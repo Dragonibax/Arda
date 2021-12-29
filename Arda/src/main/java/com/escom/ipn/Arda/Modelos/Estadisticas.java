@@ -7,6 +7,7 @@ package com.escom.ipn.Arda.Modelos;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 /**
  *
@@ -17,6 +18,7 @@ public class Estadisticas {
     
     @Id
     private String id;
+    private String TerrariosID;
     
     private String Humedad;
     private String Iluminacion;
