@@ -8,6 +8,7 @@ package com.escom.ipn.Arda.Repositorios;
 import com.escom.ipn.Arda.Modelos.Usuarios;
 import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Service;
 
 /**

@@ -14,5 +14,5 @@ import com.escom.ipn.Arda.Modelos.Usuarios;
 public interface IUsuariosServicio {
     public void crearUsuario(Usuarios User);
     public Boolean existe(String correo);
-    public Boolean verificaContraseña(String contraseña);
+    public Boolean verificaContraseña(Usuarios User);
 }

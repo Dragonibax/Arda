@@ -36,8 +36,9 @@ public class UsuariosServicioImpl implements IUsuariosServicio{
     }
 
     @Override
-    public Boolean verificaContraseña(String contraseña) {
-        return 
+    public Boolean verificaContraseña(Usuarios User) {
+        User.setContraseña(encriptador.Encriptar(User.getContraseña()));
+        return repositorio.findByCorreo(User.getCorreo()).getContraseña().equals(User.getContraseña());
     }
     
 }
