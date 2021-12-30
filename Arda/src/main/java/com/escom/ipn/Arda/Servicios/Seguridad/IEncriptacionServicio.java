@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.escom.ipn.Arda.Servicios;
+package com.escom.ipn.Arda.Servicios.Seguridad;
+
 
 /**
  *
  * @author DEZKS
  */
-public interface IUsusariosServicio {
-    public void nuevoUsuario();
-    public void eliminarUsuario();
+public interface IEncriptacionServicio {
+    
+    public String Encriptar(String pwd);
 }

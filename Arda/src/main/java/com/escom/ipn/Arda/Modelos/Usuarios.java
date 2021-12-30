@@ -18,18 +18,18 @@ public class Usuarios {
     @Id
     private String id;
     
-    private String Correo;
-    private String Contraseña;
-    private String Nombre;
+    private String correo;
+    private String contraseña;
+    private String nombre;
     
     public Usuarios() {
     }
 
     public Usuarios(String id, String Correo, String Contraseña, String Nombre) {
         this.id = id;
-        this.Correo = Correo;
-        this.Contraseña = Contraseña;
-        this.Nombre = Nombre;
+        this.correo = Correo;
+        this.contraseña = Contraseña;
+        this.nombre = Nombre;
     }
 
     public String getId() {
@@ -41,27 +41,27 @@ public class Usuarios {
     }
 
     public String getCorreo() {
-        return Correo;
+        return correo;
     }
 
-    public void setCorreo(String Correo) {
-        this.Correo = Correo;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getContraseña() {
-        return Contraseña;
+        return contraseña;
     }
 
-    public void setContraseña(String Contraseña) {
-        this.Contraseña = Contraseña;
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
     

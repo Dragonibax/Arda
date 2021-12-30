@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface IUsuariosRepositorio extends MongoRepository<Usuarios, String>{
     
-    public Usuarios findByCorreo(String correo);
+    public Usuarios findByCorreo(String Correo);
 
     @Override
     public <S extends Usuarios> S save(S entity);
