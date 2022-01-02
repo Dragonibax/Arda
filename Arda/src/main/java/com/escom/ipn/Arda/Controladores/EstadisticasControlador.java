@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author DEZKS
  */
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/private")
 public class EstadisticasControlador {
     @Autowired
     private IEstadisticasServicio servicioEstadisticas;
