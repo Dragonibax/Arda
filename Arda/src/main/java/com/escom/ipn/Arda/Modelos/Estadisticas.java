@@ -20,42 +20,20 @@ public class Estadisticas {
     private String id;
     private String TerrariosID;
     
-    private String Humedad;
-    private String Iluminacion;
-    private String Hora;
-    private String Temperatura;
+    private String humedad;
+    private String iluminacion;
+    private String hora;
+    private String temperatura;
 
     public Estadisticas() {
     }
 
     public Estadisticas(String id, String Humedad, String Iluminacion, String Hora, String Temperatura) {
         this.id = id;
-        this.Humedad = Humedad;
-        this.Iluminacion = Iluminacion;
-        this.Hora = Hora;
-        this.Temperatura = Temperatura;
-    }
-    
-    public String getTemperatura() {
-        return Temperatura;
-    }
-
-    public void setTemperatura(String Temperatura) {
-        this.Temperatura = Temperatura;
-    }
-
-    
-
-    public String getHumedad() {
-        return Humedad;
-    }
-
-    public void setHumedad(String Humedad) {
-        this.Humedad = Humedad;
-    }
-
-    public String getIluminacion() {
-        return Iluminacion;
+        this.humedad = Humedad;
+        this.iluminacion = Iluminacion;
+        this.hora = Hora;
+        this.temperatura = Temperatura;
     }
 
     public String getId() {
@@ -66,19 +44,44 @@ public class Estadisticas {
         this.id = id;
     }
 
-    
+    public String getTerrariosID() {
+        return TerrariosID;
+    }
 
-    public void setIluminacion(String Iluminacion) {
-        this.Iluminacion = Iluminacion;
+    public void setTerrariosID(String TerrariosID) {
+        this.TerrariosID = TerrariosID;
+    }
+
+    public String getHumedad() {
+        return humedad;
+    }
+
+    public void setHumedad(String humedad) {
+        this.humedad = humedad;
+    }
+
+    public String getIluminacion() {
+        return iluminacion;
+    }
+
+    public void setIluminacion(String iluminacion) {
+        this.iluminacion = iluminacion;
     }
 
     public String getHora() {
-        return Hora;
+        return hora;
     }
 
-    public void setHora(String Hora) {
-        this.Hora = Hora;
+    public void setHora(String hora) {
+        this.hora = hora;
     }
-    
+
+    public String getTemperatura() {
+        return temperatura;
+    }
+
+    public void setTemperatura(String temperatura) {
+        this.temperatura = temperatura;
+    }
     
 }

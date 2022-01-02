@@ -14,6 +14,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import java.util.Date;
+import java.util.Map;
 import javax.crypto.SecretKey;
 import org.springframework.stereotype.Service;
 
@@ -31,17 +32,9 @@ public class TokensServicioImpl implements ITokensServicio {
     private final JwtParserBuilder PARSERBUILDER = Jwts.parserBuilder();
     private final SignatureAlgorithm FIRMA = SignatureAlgorithm.HS256;
     private SecretKey key;
-
     
-
-    @Override
-    public void getUserToken() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     @Override
     public String crearToken(Usuarios User) {
-        User.setContraseña("");
         key = Keys.hmacShaKeyFor(SECRETO.getBytes());
         String token = TOKENBUILDER.setSubject(User.getNombre())
                 .claim(USER, User)
@@ -53,12 +46,20 @@ public class TokensServicioImpl implements ITokensServicio {
     }
 
     @Override
-    public Claims validaToken(String JWT) {
+    public Boolean validaToken(String JWT) {
         String token = JWT.replace(PREFIX, "");
         key = Keys.hmacShaKeyFor(SECRETO.getBytes());
         Jws<Claims> tokenparseado = PARSERBUILDER.setSigningKey(key).build().parseClaimsJws(token);
-        System.out.print(tokenparseado.getBody().get(USER, Usuarios.class).getNombre());
-        return tokenparseado.getBody();
+        return tokenparseado.getBody().get(USER)!=null;
+    }
+
+    @Override
+    public Usuarios getUserFromToken(String JWT) {
+        String token = JWT.replace(PREFIX, "");
+        key = Keys.hmacShaKeyFor(SECRETO.getBytes());
+        Jws<Claims> tokenparseado = PARSERBUILDER.setSigningKey(key).build().parseClaimsJws(token);
+        Map<String, String> user = (Map<String, String>) tokenparseado.getBody().get(USER);
+        return new Usuarios(user.get("id"), user.get("correo"), user.get("contraseña"), user.get("nombre"));
     }
     
 }

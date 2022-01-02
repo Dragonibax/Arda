@@ -15,7 +15,7 @@ import io.jsonwebtoken.Claims;
 public interface ITokensServicio {
     
     public String crearToken(Usuarios User);
-    public Claims validaToken(String JWT);
-    public void getUserToken();
+    public Boolean validaToken(String JWT);
+    public Usuarios getUserFromToken(String JWT);
     
 }

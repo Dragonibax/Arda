@@ -31,4 +31,6 @@ public interface IEstadisticasRepositorio extends MongoRepository<Estadisticas,S
     @Override
     public Optional<Estadisticas> findById(String id);
     
+    
+    
 }
