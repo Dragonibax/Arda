@@ -5,14 +5,17 @@
  */
 package com.escom.ipn.Arda.Servicios;
 
+import com.escom.ipn.Arda.Modelos.Usuarios;
+import io.jsonwebtoken.Claims;
+
 /**
  *
  * @author DEZKS
  */
 public interface ITokensServicio {
     
-    public void crearToken();
-    public void validaToken();
+    public String crearToken(Usuarios User);
+    public Claims validaToken(String JWT);
     public void getUserToken();
     
 }

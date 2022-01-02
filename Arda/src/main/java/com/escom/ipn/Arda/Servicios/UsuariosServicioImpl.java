@@ -40,5 +40,10 @@ public class UsuariosServicioImpl implements IUsuariosServicio{
         User.setContraseña(encriptador.Encriptar(User.getContraseña()));
         return repositorio.findByCorreo(User.getCorreo()).getContraseña().equals(User.getContraseña());
     }
+
+    @Override
+    public Usuarios obtenerDatos(String correo) {
+        return repositorio.findByCorreo(correo);
+    }
     
 }

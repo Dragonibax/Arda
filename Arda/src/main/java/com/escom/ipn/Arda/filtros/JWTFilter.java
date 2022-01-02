@@ -5,23 +5,22 @@
  */
 package com.escom.ipn.Arda.filtros;
 
+import com.escom.ipn.Arda.Modelos.Usuarios;
+import com.escom.ipn.Arda.Servicios.ITokensServicio;
+import com.escom.ipn.Arda.Servicios.TokensServicioImpl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.UnsupportedJwtException;
 import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
-import static org.yaml.snakeyaml.nodes.Tag.PREFIX;
 
 /**
  *
@@ -30,16 +29,22 @@ import static org.yaml.snakeyaml.nodes.Tag.PREFIX;
 public class JWTFilter extends OncePerRequestFilter {
 
     private final String HEADER = "Authorization";
+    private final String CLAIM = "User";
+    
     private final String PREFIX = "Bearer ";
-    private final String SECRET = "mySecretKey";
+    
+    @Autowired
+    private final ITokensServicio serviciotokens = new TokensServicioImpl();
+    
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try {
             if (existeJWTToken(request, response)) {
-                Claims claims = validateToken(request);
-                if (claims.get("authorities") != null) {
-                    setUpSpringAuthentication(claims);
+                String token = this.getToken(request);
+                Claims claims = serviciotokens.validaToken(token);
+                if (claims.get(CLAIM) != null) {
+                    Autorizar(claims);
                 } else {
                     SecurityContextHolder.clearContext();
                 }
@@ -48,14 +53,14 @@ public class JWTFilter extends OncePerRequestFilter {
             }
             filterChain.doFilter(request, response);
         } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException e) {
+            System.out.print(e.getMessage());
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             ((HttpServletResponse) response).sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
         }
     }
 
-    private Claims validateToken(HttpServletRequest request) {
-        String jwtToken = request.getHeader(HEADER).replace(PREFIX, "");
-        return Jwts.parser().setSigningKey(SECRET.getBytes()).parseClaimsJws(jwtToken).getBody();
+    private String getToken(HttpServletRequest request){
+        return request.getHeader(HEADER);
     }
 
     /**
@@ -63,19 +68,17 @@ public class JWTFilter extends OncePerRequestFilter {
      *
      * @param claims
      */
-    private void setUpSpringAuthentication(Claims claims) {
-        @SuppressWarnings("unchecked")
-        List<String> authorities = (List) claims.get("authorities");
-
-        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(claims.getSubject(), null,
-                authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
+    private void Autorizar(Claims claims) {
+        Usuarios User = claims.get(CLAIM, Usuarios.class);
+        System.out.print(User.getNombre());
+        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(User.getNombre(),User.getContraseña());
         SecurityContextHolder.getContext().setAuthentication(auth);
 
     }
 
     private boolean existeJWTToken(HttpServletRequest request, HttpServletResponse res) {
         String authenticationHeader = request.getHeader(HEADER);
-        if (authenticationHeader == null || !authenticationHeader.startsWith(PREFIX)) {
+        if (authenticationHeader == null) {
             return false;
         }
         return true;

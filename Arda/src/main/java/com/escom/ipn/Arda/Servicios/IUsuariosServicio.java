@@ -15,4 +15,5 @@ public interface IUsuariosServicio {
     public void crearUsuario(Usuarios User);
     public Boolean existe(String correo);
     public Boolean verificaContraseña(Usuarios User);
+    public Usuarios obtenerDatos(String correo);
 }
