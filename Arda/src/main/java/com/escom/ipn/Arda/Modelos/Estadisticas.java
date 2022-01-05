@@ -18,7 +18,7 @@ public class Estadisticas {
     
     @Id
     private String id;
-    private String TerrariosID;
+    private String terrarios_id;
     
     private String humedad;
     private String iluminacion;
@@ -44,12 +44,12 @@ public class Estadisticas {
         this.id = id;
     }
 
-    public String getTerrariosID() {
-        return TerrariosID;
+    public String getTerrarios_id() {
+        return terrarios_id;
     }
 
-    public void setTerrariosID(String TerrariosID) {
-        this.TerrariosID = TerrariosID;
+    public void setTerrarios_id(String terrarios_id) {
+        this.terrarios_id = terrarios_id;
     }
 
     public String getHumedad() {

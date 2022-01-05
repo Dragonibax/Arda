@@ -12,11 +12,7 @@ import com.escom.ipn.Arda.Modelos.Usuarios;
  *
  * @author DEZKS
  */
-public interface ITokensServicio {
-    
-    public String crearTokenUsuario(Usuarios User);
-    public String crearTokenTerrario(Terrarios terrario);
-    public Boolean validaToken(String JWT);
-    public Usuarios getUserFromToken(String JWT);
-    public Terrarios getTerrarioFromToken(String JWT);
+public interface ITerrariosServicio {
+    public Terrarios registrarTerrario(Terrarios nuevo, Usuarios propietario);
+    public Boolean terrarioExistente(Terrarios nuevo);
 }

@@ -56,8 +56,7 @@ public class JWTFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
         } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException e) {
             System.out.print(e.getMessage());
-            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            ((HttpServletResponse) response).sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
+            response.sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
         }
     }
 

@@ -6,6 +6,7 @@
 package com.escom.ipn.Arda.Controladores;
 
 import com.escom.ipn.Arda.Modelos.Estadisticas;
+import com.escom.ipn.Arda.Modelos.JsonResponse;
 import com.escom.ipn.Arda.Servicios.IEstadisticasServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +31,9 @@ public class EstadisticasControlador {
     
     /*Retorna un historial de estadisticas*/
     @GetMapping("/estadisticas")
-    public ResponseEntity<List> getEstadisticas(){
+    public ResponseEntity<JsonResponse> getEstadisticas(){
         List<Estadisticas> estadisticas = servicioEstadisticas.obtenerEstadisticas();
-        return new ResponseEntity<>(estadisticas,HttpStatus.OK);
+        return new ResponseEntity<>(new JsonResponse(estadisticas, "¡Exito!"),HttpStatus.OK);
     }
     
     /*Retorna la Ultima estadistica registrada*/

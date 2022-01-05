@@ -37,7 +37,7 @@ public class AutorizacionControlador {
     public ResponseEntity<JsonResponse> Login(@RequestBody Usuarios User) {
         if (servicioUsuarios.existe(User.getCorreo())) {
             if (servicioUsuarios.verificaContraseña(User)) {
-                String token = servicioTokens.crearToken(servicioUsuarios.obtenerDatos(User.getCorreo()));
+                String token = servicioTokens.crearTokenUsuario(servicioUsuarios.obtenerDatos(User.getCorreo()));
                 return new ResponseEntity(new JsonResponse(token, "Inicio Exitoso"), HttpStatus.CREATED);
             } else {
                 return new ResponseEntity(new JsonResponse("La contraseña es incorrecta"), HttpStatus.FORBIDDEN);
