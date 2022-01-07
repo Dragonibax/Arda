@@ -24,6 +24,9 @@ public interface ITerrariosRepositorio extends MongoRepository<Terrarios, String
     public <S extends Terrarios> S save(S entity);
 
     public Terrarios findByMac(String Mac);
+
+    @Override
+    public Optional<Terrarios> findById(String id);
     
     @Query("{'usuarios_id':?0}")
     public List<Terrarios> findByUsuarios_id(String id);

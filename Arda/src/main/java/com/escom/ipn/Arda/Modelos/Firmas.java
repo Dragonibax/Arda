@@ -47,13 +47,15 @@ public class Firmas {
         this.firma = firma;
     }
 
-    public Boolean getValidado() {
+    public Boolean getReclamada() {
         return reclamada;
     }
 
-    public void setValidado(Boolean reclamada) {
+    public void setReclamada(Boolean reclamada) {
         this.reclamada = reclamada;
     }
+
+    
 
     public String getTerrario_id() {
         return terrario_id;

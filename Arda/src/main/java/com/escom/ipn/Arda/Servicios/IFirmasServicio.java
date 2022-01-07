@@ -13,6 +13,7 @@ import com.escom.ipn.Arda.Modelos.Firmas;
  */
 public interface IFirmasServicio {
     public Firmas guardarFirma(String terrario_id, String firma);
-    public Boolean firmaValida(String terrario_id);
+    public Boolean firmaReclamada(String terrario_id);
     public Firmas obtenerFirma(String terrario_id);
+    public void cambiarEstatusFirma(Firmas firma);
 }

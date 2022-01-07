@@ -8,6 +8,7 @@ package com.escom.ipn.Arda.Repositorios;
 import com.escom.ipn.Arda.Modelos.Firmas;
 import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
 /**
  *
@@ -18,8 +19,8 @@ public interface IFirmasRespositorio extends MongoRepository<Firmas, String>{
     @Override
     public <S extends Firmas> S insert(S entity);
 
-    @Override
-    public Optional<Firmas> findById(String id);
+    @Query("{'terrario_id':?0}")
+    public Firmas findByTerrario_id(String id);
 
     @Override
     public <S extends Firmas> S save(S entity);

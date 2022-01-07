@@ -47,5 +47,15 @@ public class TerrariosServicioImpl implements ITerrariosServicio {
     public Terrarios actualizarTerrario(Terrarios actualizado) {
         return repositorio.save(actualizado);
     }
+
+    @Override
+    public Terrarios obtenerTerrarioporID(String id) {
+        return repositorio.findById(id).get();
+    }
+
+    @Override
+    public Terrarios obtenerTerrarioporMac(String mac) {
+        return repositorio.findByMac(mac);
+    }
     
 }

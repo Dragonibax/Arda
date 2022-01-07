@@ -27,15 +27,21 @@ public class FirmasServicioImpl implements IFirmasServicio{
     }
 
     @Override
-    public Boolean firmaValida(String terrario_id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Boolean firmaReclamada(String terrario_id) {
+        Firmas firma = repositorio.findByTerrario_id(terrario_id);
+        return firma.getReclamada();
     }
 
     @Override
     public Firmas obtenerFirma(String terrario_id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return repositorio.findByTerrario_id(terrario_id);
     }
 
-  
+    @Override
+    public void cambiarEstatusFirma(Firmas firma) {
+        repositorio.save(firma);
+    }
+
+    
     
 }

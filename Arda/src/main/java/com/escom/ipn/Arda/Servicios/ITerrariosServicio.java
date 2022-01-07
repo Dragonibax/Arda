@@ -19,4 +19,6 @@ public interface ITerrariosServicio {
     public List<Terrarios> terrariosDeUsuarios(String id);
     public Boolean tieneTerrarios(String id);
     public Terrarios actualizarTerrario(Terrarios actualizado);
+    public Terrarios obtenerTerrarioporID(String id);
+    public Terrarios obtenerTerrarioporMac(String mac);
 }
