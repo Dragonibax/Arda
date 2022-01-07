@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.escom.ipn.Arda.Controladores;
+package com.escom.ipn.Arda.Controladores.Privados;
 
 import com.escom.ipn.Arda.Modelos.Estadisticas;
 import com.escom.ipn.Arda.Modelos.JsonResponse;

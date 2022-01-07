@@ -38,6 +38,7 @@ public class TokensServicioImpl implements ITokensServicio {
     
     @Override
     public String crearTokenUsuario(Usuarios User) {
+        User.setContraseña("");
         key = Keys.hmacShaKeyFor(SECRETO.getBytes());
         String token = TOKENBUILDER.setSubject(User.getNombre())
                 .claim(USER, User)

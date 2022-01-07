@@ -8,6 +8,7 @@ package com.escom.ipn.Arda.Servicios;
 import com.escom.ipn.Arda.Modelos.Terrarios;
 import com.escom.ipn.Arda.Modelos.Usuarios;
 import com.escom.ipn.Arda.Repositorios.ITerrariosRepositorio;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,21 @@ public class TerrariosServicioImpl implements ITerrariosServicio {
     @Override
     public Boolean terrarioExistente(Terrarios nuevo) {
         return repositorio.findByMac(nuevo.getMac())!=null;
+    }
+
+    @Override
+    public List<Terrarios> terrariosDeUsuarios(String id) {
+        return repositorio.findByUsuarios_id(id);
+    }
+
+    @Override
+    public Boolean tieneTerrarios(String id) {
+        return !repositorio.findByUsuarios_id(id).isEmpty();
+    }
+
+    @Override
+    public Terrarios actualizarTerrario(Terrarios actualizado) {
+        return repositorio.save(actualizado);
     }
     
 }

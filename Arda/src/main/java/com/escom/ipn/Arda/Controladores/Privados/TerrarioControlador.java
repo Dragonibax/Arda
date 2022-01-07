@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.escom.ipn.Arda.Controladores;
+package com.escom.ipn.Arda.Controladores.Privados;
 
 import com.escom.ipn.Arda.Modelos.JsonResponse;
 import com.escom.ipn.Arda.Modelos.Terrarios;
+import com.escom.ipn.Arda.Modelos.Usuarios;
 import com.escom.ipn.Arda.Servicios.IFirmasServicio;
 import com.escom.ipn.Arda.Servicios.ITerrariosServicio;
 import com.escom.ipn.Arda.Servicios.ITokensServicio;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -53,11 +55,17 @@ public class TerrarioControlador {
     }
 
     @GetMapping("/terrarios")
-    public void getTerrarios(@RequestHeader("Authorization") String token) {
-
+    public ResponseEntity<JsonResponse> getTerrarios(@RequestHeader("Authorization") String token) {
+        Usuarios user = servicioTokens.getUserFromToken(token);
+        if(servicioTerrarios.tieneTerrarios(user.getId())){
+            List<Terrarios> terrarios = servicioTerrarios.terrariosDeUsuarios(user.getId());
+            return new ResponseEntity<>(new JsonResponse(terrarios, "Lista de terrarios"),HttpStatus.ACCEPTED);
+        }else{
+            return new ResponseEntity<>(new JsonResponse("Usted no tiene terrarios registrados"),HttpStatus.NO_CONTENT);
+        }
     }
 
-    @GetMapping("/terrarios/{User_ID}/{Terrario_ID}")
+    @GetMapping("/terrarios/{Terrario_ID}")
     public void getTerrario() {
 
     }
@@ -68,7 +76,8 @@ public class TerrarioControlador {
     }
 
     @PatchMapping("/terrarios")
-    public void patchTerrario() {
-
+    public ResponseEntity<JsonResponse> patchTerrario(@RequestBody Terrarios terrario) {
+        Terrarios actualizado = servicioTerrarios.actualizarTerrario(terrario);
+        return new ResponseEntity(actualizado, HttpStatus.CREATED);
     }
 }

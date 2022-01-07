@@ -7,6 +7,7 @@ package com.escom.ipn.Arda.Servicios;
 
 import com.escom.ipn.Arda.Modelos.Terrarios;
 import com.escom.ipn.Arda.Modelos.Usuarios;
+import java.util.List;
 
 /**
  *
@@ -15,4 +16,7 @@ import com.escom.ipn.Arda.Modelos.Usuarios;
 public interface ITerrariosServicio {
     public Terrarios registrarTerrario(Terrarios nuevo, Usuarios propietario);
     public Boolean terrarioExistente(Terrarios nuevo);
+    public List<Terrarios> terrariosDeUsuarios(String id);
+    public Boolean tieneTerrarios(String id);
+    public Terrarios actualizarTerrario(Terrarios actualizado);
 }
