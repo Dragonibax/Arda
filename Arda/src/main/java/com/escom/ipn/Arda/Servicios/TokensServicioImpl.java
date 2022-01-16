@@ -70,14 +70,17 @@ public class TokensServicioImpl implements ITokensServicio {
         key = Keys.hmacShaKeyFor(SECRETO.getBytes());
         String token = TOKENBUILDER.setSubject(terrario.getMac())
                 .claim(TERRARIO, terrario)
-                .setIssuedAt(new Date(System.currentTimeMillis()))
                 .signWith(key, FIRMA).compact();
         return PREFIX + token;
     }
 
     @Override
     public Terrarios getTerrarioFromToken(String JWT) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String token = JWT.replace(PREFIX, "");
+        key = Keys.hmacShaKeyFor(SECRETO.getBytes());
+        Jws<Claims> tokenparseado = PARSERBUILDER.setSigningKey(key).build().parseClaimsJws(token);
+        Map<String,String> terrario = (Map<String,String>) tokenparseado.getBody().get(TERRARIO);
+        return new Terrarios(terrario.get("id"),terrario.get("ubicacion"), terrario.get("altura"), terrario.get("iluminacion_tipo"), terrario.get("usuarios_id"));
     }
     
 }

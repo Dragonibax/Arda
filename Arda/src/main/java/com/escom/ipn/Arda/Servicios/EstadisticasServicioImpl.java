@@ -6,6 +6,7 @@
 package com.escom.ipn.Arda.Servicios;
 
 import com.escom.ipn.Arda.Modelos.Estadisticas;
+import com.escom.ipn.Arda.Modelos.Terrarios;
 import com.escom.ipn.Arda.Repositorios.IEstadisticasRepositorio;
 import java.util.List;
 import java.util.Optional;
@@ -38,7 +39,8 @@ public class EstadisticasServicioImpl implements IEstadisticasServicio{
     }
 
     @Override
-    public Estadisticas registraEstadistica(Estadisticas recoleccion) {
+    public Estadisticas registraEstadistica(Estadisticas recoleccion, Terrarios terrario) {
+        recoleccion.setTerrario_id(terrario.getId());
         return repositorio.insert(recoleccion);
     }
     

@@ -35,13 +35,13 @@ public class AutorizacionControlador {
 
     @Autowired
     IUsuariosServicio servicioUsuarios;
-    
+
     @Autowired
     ITokensServicio servicioTokens;
-    
+
     @Autowired
     ITerrariosServicio servicioTerrarios;
-    
+
     @Autowired
     IFirmasServicio servicioFirmas;
 
@@ -69,24 +69,23 @@ public class AutorizacionControlador {
             return new ResponseEntity("¡Exito!", HttpStatus.CREATED);
         }
     }
-    
+
     @GetMapping("/firmarterrario")
-    public ResponseEntity<JsonResponse> firmarTerrario(@RequestHeader("mac") String mac){
+    public ResponseEntity<JsonResponse> firmarTerrario(@RequestHeader("mac") String mac) {
         Terrarios buscar = new Terrarios();
         buscar.setMac(mac);
-        if(servicioTerrarios.terrarioExistente(buscar)){
+        if (servicioTerrarios.terrarioExistente(buscar)) {
             buscar = servicioTerrarios.obtenerTerrarioporMac(mac);
-            if(!servicioFirmas.firmaReclamada(buscar.getId())){
+            if (!servicioFirmas.firmaReclamada(buscar.getId())) {
                 Firmas firma = servicioFirmas.obtenerFirma(buscar.getId());
                 firma.setReclamada(Boolean.TRUE);
                 servicioFirmas.cambiarEstatusFirma(firma);
-                return new ResponseEntity(new JsonResponse(firma.getFirma(), "Firma de la placa"),HttpStatus.ACCEPTED);
-            }else{
+                return new ResponseEntity(new JsonResponse(firma.getFirma(), "Firma de la placa"), HttpStatus.ACCEPTED);
+            } else {
                 return new ResponseEntity(new JsonResponse("La firma ya fue reclamada"), HttpStatus.CONFLICT);
             }
-        }else{
+        } else {
             return new ResponseEntity(new JsonResponse("El terrario no esta registrado"), HttpStatus.UNAUTHORIZED);
         }
     }
-
 }
