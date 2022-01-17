@@ -14,7 +14,7 @@ import java.util.List;
  * @author DEZKS
  */
 public interface IEstadisticasServicio {
-    public List<Estadisticas> obtenerEstadisticas();
+    public List<Estadisticas> obtenerEstadisticas(String terrario_id);
     public Estadisticas obtenerEstadisticaEspecifica(String id);
     public Estadisticas registraEstadistica(Estadisticas recoleccion, Terrarios terrario);
 }

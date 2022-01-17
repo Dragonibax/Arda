@@ -37,17 +37,17 @@ public class EstadisticasControlador {
     private ITokensServicio servicioTokens;
     
     /*Retorna un historial de estadisticas*/
-    @GetMapping("/estadisticas")
-    public ResponseEntity<JsonResponse> getEstadisticas(){
-        List<Estadisticas> estadisticas = servicioEstadisticas.obtenerEstadisticas();
+    @GetMapping("/estadisticas/{Terrario_id}")
+    public ResponseEntity<JsonResponse> getEstadisticas(@PathVariable String Terrario_id){
+        List<Estadisticas> estadisticas = servicioEstadisticas.obtenerEstadisticas(Terrario_id);
         return new ResponseEntity<>(new JsonResponse(estadisticas, "¡Exito!"),HttpStatus.OK);
     }
     
     /*Retorna la Ultima estadistica registrada*/
     @GetMapping("/estadisticas/{Terrario_ID}/{id}")
-    public ResponseEntity<Estadisticas> getEstadistica(@PathVariable String Terrario_ID, @PathVariable String id){
+    public ResponseEntity<JsonResponse> getEstadistica(@PathVariable String Terrario_ID, @PathVariable String id){
         Estadisticas ultimaEstadistica = servicioEstadisticas.obtenerEstadisticaEspecifica(id);
-        return new ResponseEntity<>(ultimaEstadistica,HttpStatus.OK);
+        return new ResponseEntity<>(new JsonResponse(ultimaEstadistica, "Ultima estadistica"),HttpStatus.OK);
     }
     
     /*agrega una nueva estadistica al historial*/

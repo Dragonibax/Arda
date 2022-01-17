@@ -11,6 +11,8 @@ import com.escom.ipn.Arda.Repositorios.IEstadisticasRepositorio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -20,12 +22,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class EstadisticasServicioImpl implements IEstadisticasServicio{
     
+    private final Integer PAGE = 0;
+    private final Integer SIZE = 20;
+    
     @Autowired
     private IEstadisticasRepositorio repositorio;
     
     @Override
-    public List<Estadisticas> obtenerEstadisticas() {
-        return repositorio.findAll();
+    public List<Estadisticas> obtenerEstadisticas(String terrario_id) {
+        Pageable page = PageRequest.of(PAGE, SIZE);
+        
+        return repositorio.findByTerrariosID(terrario_id, page);
     }
 
     @Override
