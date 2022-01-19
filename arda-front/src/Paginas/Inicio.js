@@ -1,12 +1,11 @@
 import React from 'react'
-import Menu from '../Componentes/Menu';
 
 function Inicio(props) {
-    return ( 
+    return (
         <>
-        <Menu/>
+            Aqui pones tu codigo Sabino
         </>
-     );
+    );
 }
 
 export default Inicio;
