@@ -5,8 +5,8 @@
  */
 package com.escom.ipn.Arda.Servicios;
 
+import com.escom.ipn.Arda.Modelos.Terrarios;
 import com.escom.ipn.Arda.Modelos.Usuarios;
-import io.jsonwebtoken.Claims;
 
 /**
  *
@@ -14,8 +14,9 @@ import io.jsonwebtoken.Claims;
  */
 public interface ITokensServicio {
     
-    public String crearToken(Usuarios User);
+    public String crearTokenUsuario(Usuarios User);
+    public String crearTokenTerrario(Terrarios terrario);
     public Boolean validaToken(String JWT);
     public Usuarios getUserFromToken(String JWT);
-    
+    public Terrarios getTerrarioFromToken(String JWT);
 }
