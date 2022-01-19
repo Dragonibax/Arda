@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  */
 public interface IEstadisticasServicio {
     public List<Estadisticas> obtenerEstadisticas();
-    public Estadisticas obtenerUltimaEstadistica();
+    public Estadisticas obtenerEstadisticaEspecifica(String id);
     public Estadisticas registraEstadistica(Estadisticas recoleccion);
 }

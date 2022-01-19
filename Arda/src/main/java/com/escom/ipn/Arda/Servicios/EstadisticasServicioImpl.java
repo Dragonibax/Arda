@@ -7,8 +7,8 @@ package com.escom.ipn.Arda.Servicios;
 
 import com.escom.ipn.Arda.Modelos.Estadisticas;
 import com.escom.ipn.Arda.Repositorios.IEstadisticasRepositorio;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,13 +28,13 @@ public class EstadisticasServicioImpl implements IEstadisticasServicio{
     }
 
     @Override
-    public Estadisticas obtenerUltimaEstadistica() {
-        Estadisticas ultimaEstadistica = new Estadisticas();
-        ultimaEstadistica.setCalefaccion("Media");
-        ultimaEstadistica.setHora("12 PM");
-        ultimaEstadistica.setHumedad("seco");
-        ultimaEstadistica.setIluminacion("10 lumens");
-        return ultimaEstadistica;
+    public Estadisticas obtenerEstadisticaEspecifica(String id) {
+        Optional<Estadisticas> result = repositorio.findById(id);
+        if(result.isPresent()){
+            return result.get();
+        }else{
+        }
+        return null;
     }
 
     @Override
