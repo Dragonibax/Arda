@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Inicio from './Paginas/Inicio';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
     constructor(props) {
@@ -6,7 +8,9 @@ class App extends Component {
         this.state = {  }
     }
     render() { 
-        return ( <h1>Hola mundo</h1> );
+        return (
+            <Inicio/>
+         );
     }
 }
  
