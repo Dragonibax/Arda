@@ -20,15 +20,19 @@ public class Lagartijas {
     private Integer edad;
     private Character genero;
     private String color;
-    private String terrarios_id;
-
+    private String terrario_id;
+    
+    public Lagartijas(){
+        
+    }
+    
     public Lagartijas(String id, String nombre, Integer edad, Character genero, String color, String terrario_id) {
         this.id = id;
         this.nombre = nombre;
         this.edad = edad;
         this.genero = genero;
         this.color = color;
-        this.terrarios_id = terrario_id;
+        this.terrario_id = terrario_id;
     }
 
     public Lagartijas(String nombre, Integer edad, Character genero, String color, String terrario_id) {
@@ -36,7 +40,7 @@ public class Lagartijas {
         this.edad = edad;
         this.genero = genero;
         this.color = color;
-        this.terrarios_id = terrario_id;
+        this.terrario_id = terrario_id;
     }
 
     public String getId() {
@@ -80,11 +84,11 @@ public class Lagartijas {
     }
 
     public String getTerrario_id() {
-        return terrarios_id;
+        return terrario_id;
     }
 
     public void setTerrario_id(String terrario_id) {
-        this.terrarios_id = terrario_id;
+        this.terrario_id = terrario_id;
     }
     
     
