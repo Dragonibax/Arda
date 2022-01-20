@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Menu from './Componentes/Menu';
 import Router from './Router/Router';
+import UserContext from './Context/UserContext';
+import {UserProvider} from './Context/UserContext';
 
 class App extends Component {
     constructor(props) {
@@ -11,8 +13,10 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Menu/>
-                <Router />
+                <UserProvider>
+                    <Menu />
+                    <Router />
+                </UserProvider>
             </div>
         );
     }
