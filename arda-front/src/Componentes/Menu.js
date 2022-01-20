@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { GiTripleClaws } from 'react-icons/gi'
+import { Link } from 'react-router-dom';
 import UserContext, { UserProvider } from '../Context/UserContext';
 
 function Menu(props) {
@@ -8,7 +9,7 @@ function Menu(props) {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container fluid>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand as={Link} to="/">
                     <GiTripleClaws className="d-inline-block align-top" />
                     {' '}
                     ARDA
@@ -44,7 +45,7 @@ function Menu(props) {
                         <Nav.Link eventKey={2} href="#memes">
                             Cerrar Sesion
                         </Nav.Link>
-                        :<Nav.Link eventKey={2} href="#memes">
+                        :<Nav.Link eventKey={2} as={Link} to="/login">
                             Iniciar Sesion
                         </Nav.Link>
                         }

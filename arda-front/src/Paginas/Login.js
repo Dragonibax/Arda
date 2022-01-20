@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 function Login(props) {
     return ( 
         <Container>
-            
+            LOGIN
         </Container>
      );
 }
