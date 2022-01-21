@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { GiTripleClaws } from 'react-icons/gi'
 import { Link } from 'react-router-dom';
-import UserContext, { UserProvider } from '../Context/UserContext';
+import UserContext from '../Context/UserContext';
 
 function Menu(props) {
     const {Loged} = useContext(UserContext);
