@@ -11,11 +11,11 @@ const {setSesion} = useContext(UserContext);
 const IniciarSesion = (payload) => {
     base.post("inicarsesion",payload)
     .then(response => {
-        if(!response.status==200){
-            setSesion(response.data.body.token);
-        }else{
-            setLoged(true);
+        if(response.status==200){
+            setSesion(response.data.body);
         }
         return response.data
     })
 }
+
+export {IniciarSesion};

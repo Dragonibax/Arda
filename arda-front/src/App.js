@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import Menu from './Componentes/Menu';
 import Router from './Router/Router';
 import UserContext from './Context/UserContext';

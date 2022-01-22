@@ -18,9 +18,21 @@ const UserProvider = ({ children }) => {
     const setSesion = (jwt)=> {
         setJWT(jwt);
         setLoged(true);
+        window.localStorage.setItem("jwt",jwt);
     };
 
-    const data = { JWT, Loged, setSesion}
+    const closeSesion = () => {
+        setJWT(null);
+        setLoged(false);
+        window.localStorage.removeItem("jwt");
+    }
+
+    const UpdateJWT = (jwt)=> {
+        window.localStorage.clear();
+        window.localStorage.setItem("jwt",jwt);
+    }
+
+    const data = { JWT, Loged, setSesion, closeSesion, UpdateJWT}
     return (<UserContext.Provider value={data}>{children}</UserContext.Provider>);
 }
 export { UserProvider };
