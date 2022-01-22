@@ -13,3 +13,17 @@
     background-color: rgb(0, 135, 0);
     border-color: rgb(0, 135, 0);
 }
+
+.title-Arda{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.title-Arda:first-letter{
+    font-style: italic;
+    color: rgb(0, 175, 0);
+    font-size: 130%;
+}
+
+.title-Arda:hover{
+    transform:scale(1.1);
+}
