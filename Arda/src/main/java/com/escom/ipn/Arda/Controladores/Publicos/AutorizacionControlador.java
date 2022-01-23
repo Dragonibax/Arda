@@ -13,16 +13,16 @@ import com.escom.ipn.Arda.Servicios.IFirmasServicio;
 import com.escom.ipn.Arda.Servicios.ITerrariosServicio;
 import com.escom.ipn.Arda.Servicios.ITokensServicio;
 import com.escom.ipn.Arda.Servicios.IUsuariosServicio;
-import org.apache.coyote.http11.Http11AprProtocol;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.codec.json.Jackson2JsonEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author DEZKS
  */
 @RestController
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.OPTIONS})
 @RequestMapping("/api/public")
 public class AutorizacionControlador {
 
@@ -45,12 +46,12 @@ public class AutorizacionControlador {
     @Autowired
     IFirmasServicio servicioFirmas;
 
-    @PostMapping("/inicarsesion")
+    @PostMapping("/iniciarsesion")
     public ResponseEntity<JsonResponse> Login(@RequestBody Usuarios User) {
         if (servicioUsuarios.existe(User.getCorreo())) {
             if (servicioUsuarios.verificaContraseña(User)) {
                 String token = servicioTokens.crearTokenUsuario(servicioUsuarios.obtenerDatos(User.getCorreo()));
-                return new ResponseEntity(new JsonResponse(token, "Inicio Exitoso"), HttpStatus.CREATED);
+                return new ResponseEntity(new JsonResponse(token, "Inicio Exitoso"), HttpStatus.ACCEPTED);
             } else {
                 return new ResponseEntity(new JsonResponse("La contraseña es incorrecta"), HttpStatus.FORBIDDEN);
             }
