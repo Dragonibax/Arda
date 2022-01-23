@@ -1,9 +1,29 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Col, Container, FloatingLabel, Form, Row } from 'react-bootstrap';
+import UserContext from '../Context/UserContext';
+import ApiPublic from '../Servicios/apiPublica';
 
 function Login(props) {
-    const [Correo, setCorreo] = useState("");
-    const [Contraseña, setContraseña] = useState("");
+    const [correo, setCorreo] = useState("");
+    const [contraseña, setContraseña] = useState("");
+    const {setSesion} = useContext(UserContext);
+
+
+    const SendData = ()=> {
+        const data = {
+            correo,
+            contraseña
+        }
+        ApiPublic.IniciarSesion(data)
+        .then(response=>{
+            setSesion(response.data.body)
+            console.log(response)
+        })
+        .catch(error=>{
+            console.log(error.response)
+        })
+    }
+    
     return (
         <Container>
             <Row>
@@ -12,10 +32,10 @@ function Login(props) {
                         label="Correo Electronico"
                         className="mb-3"
                     >
-                        <Form.Control type="email" placeholder="Usuario@ejemplo.com" value={Correo} onChange={(e) =>setCorreo(e.target.value)}/>
+                        <Form.Control type="email" placeholder="Usuario@ejemplo.com" value={correo} onChange={(e) =>setCorreo(e.target.value)}/>
                     </FloatingLabel>
                     <FloatingLabel label="Contraseña">
-                        <Form.Control type="password" placeholder="Contraseña" value={Contraseña} onChange={(e) =>setContraseña(e.target.value)}/>
+                        <Form.Control type="password" placeholder="Contraseña" value={contraseña} onChange={(e) =>setContraseña(e.target.value)}/>
                     </FloatingLabel>
                 </Col>
             </Row>
@@ -24,7 +44,7 @@ function Login(props) {
                 <Col>
                 <Container fluid>
 
-                    <Button variant="ArdaGreen" size="lg">Iniciar Sesion</Button>
+                    <Button variant="ArdaGreen" size="lg" type='button' onClick={SendData}>Iniciar Sesion</Button>
                 </Container>
                 </Col>
                 <Col lg={4}></Col>

@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 import UserContext from '../Context/UserContext';
 
 function Menu(props) {
-    const { Loged } = useContext(UserContext);
+    const { Loged, closeSesion } = useContext(UserContext);
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container fluid>
-                <Navbar.Brand as={Link} to="/" className='title-Arda'>
+                <Navbar.Brand as={Link} to="/">
                     <Row xs={4}>
                         <Col className="d-inline-block align-content-center">
-                            <GiTripleClaws className="logo-Arda"/>
+                            <GiTripleClaws/>
                             {' '}
                         </Col>
                         <Col className='title-Arda'>
@@ -24,7 +24,7 @@ function Menu(props) {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         {Loged
-                            ? <Nav.Link href="#features">Monitor</Nav.Link>
+                            ? <Nav.Link as={Link} to={"/monitor"}>Monitor</Nav.Link>
                             : <Nav.Link href="#pricing">Aquirir un terrario</Nav.Link>}
                         {Loged
                             ?
@@ -48,7 +48,7 @@ function Menu(props) {
                     <Nav>
                         {Loged
                             ?
-                            <Nav.Link eventKey={2} href="#memes">
+                            <Nav.Link eventKey={2} onClick={closeSesion}>
                                 Cerrar Sesion
                             </Nav.Link>
                             : <Nav.Link eventKey={2} as={Link} to="/login">
