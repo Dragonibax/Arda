@@ -30,6 +30,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterAfter(new JWTFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests().antMatchers("/api/public/**").permitAll()
                 .anyRequest().authenticated();
+        http.cors();
     }
 
 }
