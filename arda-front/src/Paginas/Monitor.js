@@ -13,7 +13,7 @@ function MonitorPrincipal() {
     useEffect(() => {
         const timer = setInterval(() => {
             setRenderFrec(RenderFrec => RenderFrec + 1);
-        }, 1000);
+        }, 5000);
         ApiPrivate.VerTerrarios(jwt)
             .then(response => {
                 if(response.data.body){

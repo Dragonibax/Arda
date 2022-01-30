@@ -15,7 +15,7 @@ function MonitorTerrario({terrario, ubicacion, update}) {
     useEffect(() => {
         ApiPrivate.ObtenerEstadisticas(terrario,JWT)
         .then(result => {
-            setStats(result.data.body);
+            setStats(result.data.body.reverse());
             console.log(result.data.body)
         })
     }, [update]);
