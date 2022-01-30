@@ -24,7 +24,7 @@ function Menu(props) {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         {Loged
-                            ? <Nav.Link as={Link} to={"/monitor"}>Monitor</Nav.Link>
+                            ? <Nav.Link as={Link} to={"/monitor-principal"}>Monitor</Nav.Link>
                             : <Nav.Link href="#pricing">Aquirir un terrario</Nav.Link>}
                         {Loged
                             ?
@@ -36,12 +36,7 @@ function Menu(props) {
                         }
                         {Loged
                             ?
-                            <NavDropdown title="Administar Terrarios" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Monitorear Terrario</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Editar datos de terrario</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Registrar un Terrario</NavDropdown.Item>
-                            </NavDropdown>
+                            <Nav.Link as={Link} to="/terrarios">Administrar Terrarios</Nav.Link>
                             : ""
                         }
                     </Nav>

@@ -69,7 +69,7 @@ public class TokensServicioImpl implements ITokensServicio {
     public String crearTokenTerrario(Terrarios terrario) {
         key = Keys.hmacShaKeyFor(SECRETO.getBytes());
         String token = TOKENBUILDER.setSubject(terrario.getMac())
-                .claim(TERRARIO, terrario)
+                .claim(TERRARIO, terrario).setExpiration(null)
                 .signWith(key, FIRMA).compact();
         return PREFIX + token;
     }

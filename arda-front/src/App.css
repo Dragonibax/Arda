@@ -19,11 +19,8 @@
 }
 
 .title-Arda:first-letter{
+    text-transform: uppercase;
     font-style: italic;
     color: rgb(0, 175, 0);
     font-size: 130%;
-}
-
-.title-Arda:hover{
-    transform:scale(1.1);
 }

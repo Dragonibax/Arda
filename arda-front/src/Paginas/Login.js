@@ -17,7 +17,6 @@ function Login(props) {
         ApiPublic.IniciarSesion(data)
         .then(response=>{
             setSesion(response.data.body)
-            console.log(response)
         })
         .catch(error=>{
             console.log(error.response)
