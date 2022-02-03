@@ -4,6 +4,8 @@ import './App.css';
 import Menu from './Componentes/Menu';
 import Router from './Router/Router';
 import {UserProvider} from './Context/UserContext';
+import Body from './Componentes/Body';
+import Cursor from './Componentes/Cursor';
 
 class App extends Component {
     constructor(props) {
@@ -13,11 +15,15 @@ class App extends Component {
     render() {
         return (
             <div>
-                <UserProvider>
+                <UserProvider>  
                     <Menu />
-                    <Router />
+                    <Body />
+                    <Cursor/>
+                    <Router/>
+                    
                 </UserProvider>
             </div>
+            
         );
     }
 }
