@@ -4,13 +4,10 @@ import { createContext, useEffect, useState } from 'react';
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-    const [JWT, setJWT] = useState(null);
-    const [Loged, setLoged] = useState(false);
+    const [JWT, setJWT] = useState(window.localStorage.getItem("jwt"));
+    const [Loged, setLoged] = useState(window.localStorage.getItem("jwt")?true:false);
     useEffect(() => {
-        const jwt = window.localStorage.getItem("jwt");
-        console.log(jwt);
-        if(jwt){
-            setJWT(jwt);
+        if(JWT){
             setLoged(true);
         }
     }, []);

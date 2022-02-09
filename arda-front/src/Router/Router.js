@@ -15,7 +15,7 @@ function Router(props) {
                 <Route path="login" element={!Loged?<Login />:<Navigate to="/monitor-principal"/>} />
                 <Route path="monitor-principal" element={Loged?<MonitorPrincipal />:<Navigate to="/login"/>}/>
                 <Route path="terrarios" element={Loged?<Terrarios/>:<Navigate to="/login"/>}/>
-            </Route>1
+            </Route>
         </Routes>
     );
 }
