@@ -13,6 +13,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 /**
@@ -23,14 +24,14 @@ import org.springframework.stereotype.Service;
 public class EstadisticasServicioImpl implements IEstadisticasServicio{
     
     private final Integer PAGE = 0;
-    private final Integer SIZE = 20;
+    private final Integer SIZE = 25;
     
     @Autowired
     private IEstadisticasRepositorio repositorio;
     
     @Override
     public List<Estadisticas> obtenerEstadisticas(String terrario_id) {
-        Pageable page = PageRequest.of(PAGE, SIZE);
+        Pageable page = PageRequest.of(PAGE, SIZE, Sort.by(Sort.Direction.DESC, "_id"));
         
         return repositorio.findByTerrariosID(terrario_id, page);
     }
