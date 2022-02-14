@@ -26,6 +26,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .addFilterAfter(new JWTFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests().antMatchers("/api/public/**").permitAll()
+                .and().authorizeRequests().antMatchers("/swagger-ui/**").permitAll()
+                .and().authorizeRequests().antMatchers("/v3/**").permitAll()
                 .anyRequest().authenticated();
         http.cors();
     }
