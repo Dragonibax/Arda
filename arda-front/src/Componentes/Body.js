@@ -30,7 +30,11 @@ function Body(props) {
 			<div className="hexagon"></div>
             <div className="hexagon"></div>
 			<div className="hexagon"></div>
-            <div className="hexagon"></div>     
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>      
 		</div>
          
         <div className="rowk 1">
@@ -53,6 +57,10 @@ function Body(props) {
             <div className="hexagon"></div>
 			<div className="hexagon"></div>
             <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>  
       
 		</div>
 		<div className="rowk 2">
@@ -74,7 +82,11 @@ function Body(props) {
 			<div className="hexagon"></div>
             <div className="hexagon"></div>
 			<div className="hexagon"></div>
-            <div className="hexagon"></div> 
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>   
 		</div>
 		<div className="rowk 3">
 			<div className="hexagon"></div>
@@ -96,6 +108,10 @@ function Body(props) {
 			<div className="hexagon"></div>
             <div className="hexagon"></div>
             <div className="hexagon"></div> 
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>  
 		</div>
 		<div className="rowk 4">
 			<div className="hexagon"></div>
@@ -117,6 +133,10 @@ function Body(props) {
             <div className="hexagon"></div>
 			<div className="hexagon"></div>
             <div className="hexagon"></div> 
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>  
 		</div>
 		<div className="rowk 5">
 			<div className="hexagon"></div>
@@ -138,6 +158,10 @@ function Body(props) {
 			<div className="hexagon"></div>
             <div className="hexagon"></div> 
             <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>  
 		</div>
 		<div className="rowk 6">
 			<div className="hexagon"></div>
@@ -159,6 +183,10 @@ function Body(props) {
             <div className="hexagon"></div>
 			<div className="hexagon"></div>
             <div className="hexagon"></div> 
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>  
 		</div>
 		<div className="rowk 7">
 			<div className="hexagon"></div>
@@ -180,6 +208,10 @@ function Body(props) {
             <div className="hexagon"></div>
 			<div className="hexagon"></div>
             <div className="hexagon"></div> 
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>  
 		</div>
 		<div className="rowk 8">
 			<div className="hexagon"></div>
@@ -201,6 +233,10 @@ function Body(props) {
             <div className="hexagon"></div>
 			<div className="hexagon"></div>
             <div className="hexagon"></div> 
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>  
 		</div>
 		<div className="rowk 9">
 			<div className="hexagon"></div>
@@ -222,6 +258,10 @@ function Body(props) {
             <div className="hexagon"></div>
 			<div className="hexagon"></div>
             <div className="hexagon"></div> 
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>  
 		</div>
 		<div className="rowk 10">
 			<div className="hexagon"></div>
@@ -242,7 +282,63 @@ function Body(props) {
 			<div className="hexagon"></div>
             <div className="hexagon"></div>
 			<div className="hexagon"></div>
-            <div className="hexagon"></div> 
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>   
+		</div>
+
+		<div className="rowk 11">
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>   
+		</div>
+
+		<div className="rowk 12">
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>
+			<div className="hexagon"></div>
+            <div className="hexagon"></div>   
 		</div>
 
 		
