@@ -50,7 +50,13 @@ function Menu(props) {
                                 Iniciar Sesion
                             </Nav.Link>
                         }
+                        {Loged
+                            ?
+                            ""
+                            : <Nav.Link eventKey={2} as={Link} to="/signin">Crear Usuario</Nav.Link>
+                        }
                     </Nav>
+                    
                 </Navbar.Collapse>
             </Container>
         </Navbar>

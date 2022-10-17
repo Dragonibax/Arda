@@ -3,9 +3,10 @@ import { Button, Col, Container, FloatingLabel, Form, Row, FormLabel } from 'rea
 import UserContext from '../Context/UserContext';
 import ApiPublic from '../Servicios/apiPublica';
 
-function Login(props) {
+function Signin(props) {
     const [correo, setCorreo] = useState("");
     const [contraseña, setContraseña] = useState("");
+    const [usuario, setUsuario] = useState("");
     const {setSesion} = useContext(UserContext);
 
 
@@ -14,7 +15,7 @@ function Login(props) {
             correo,
             contraseña
         }
-        ApiPublic.IniciarSesion(data)
+        ApiPublic.Registrar(data)
         .then(response=>{
             setSesion(response.data.body)
         })
@@ -25,38 +26,46 @@ function Login(props) {
     
     return (
         <Container className='Sablogins'>
+            
             <Row className="mb-3">
                 <Col>   
                 <FormLabel className='SabtitleLogins'>
-                       Iniciar Sesion
+                       Crear una cuenta
                         </FormLabel>
                 </Col>
             </Row>
+            
             <Row className="mb-3">
                 <Col>
+                    <FloatingLabel label="Usuario" className="mb-3">
+                        <Form.Control type="user" placeholder="Nombre de usuario" value={usuario} onChange={(e) =>setUsuario(e.target.value)}/>
+                    </FloatingLabel>
+
                     <FloatingLabel
                         label="Correo Electronico"
                         className="mb-3"
                     >
                         <Form.Control type="email" placeholder="Usuario@ejemplo.com" value={correo} onChange={(e) =>setCorreo(e.target.value)}/>
                     </FloatingLabel>
+
                     <FloatingLabel label="Contraseña">
                         <Form.Control type="password" placeholder="Contraseña" value={contraseña} onChange={(e) =>setContraseña(e.target.value)}/>
                     </FloatingLabel>
                 </Col>
             </Row>
-            <Row className="mb-3">
+            <Row>
                 <Col lg={4}></Col>
                 <Col>
                 <Container fluid>
 
-                    <Button variant="ArdaGreen" size="lg" type='button' onClick={SendData}>Iniciar Sesion</Button>
+                    <Button variant="ArdaGreen" size="lg" type='button' onClick={SendData}>Crear Cuenta</Button>
                 </Container>
                 </Col>
                 <Col lg={4}></Col>
             </Row>
+            
         </Container>
     );
 }
 
-export default Login;
+export default Signin;
