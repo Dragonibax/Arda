@@ -6,15 +6,15 @@
 package com.escom.ipn.Arda.Servicios;
 
 import com.escom.ipn.Arda.Modelos.Estadisticas;
+import com.escom.ipn.Arda.Modelos.Terrarios;
 import java.util.List;
-import org.springframework.stereotype.Service;
 
 /**
  *
  * @author DEZKS
  */
 public interface IEstadisticasServicio {
-    public List<Estadisticas> obtenerEstadisticas();
+    public List<Estadisticas> obtenerEstadisticas(String terrario_id);
     public Estadisticas obtenerEstadisticaEspecifica(String id);
-    public Estadisticas registraEstadistica(Estadisticas recoleccion);
+    public Estadisticas registraEstadistica(Estadisticas recoleccion, Terrarios terrario);
 }

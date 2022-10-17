@@ -46,7 +46,7 @@ public class JWTFilter extends OncePerRequestFilter {
             if (existeJWTToken(request)) {
                 String token = this.getToken(request);
                 if (serviciotokens.validaToken(token)) {
-                    Autorizar(serviciotokens.getUserFromToken(token));
+                    Autorizar();
                 } else {
                     SecurityContextHolder.clearContext();
                 }
@@ -56,8 +56,7 @@ public class JWTFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
         } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException e) {
             System.out.print(e.getMessage());
-            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            ((HttpServletResponse) response).sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
+            response.sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
         }
     }
 
@@ -70,10 +69,10 @@ public class JWTFilter extends OncePerRequestFilter {
      *
      * @param claims
      */
-    private void Autorizar(Usuarios User) {
+    private void Autorizar() {
         Collection<SimpleGrantedAuthority> roles = new ArrayList<>();
         roles.add(new SimpleGrantedAuthority(ROL));
-        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(User.getNombre(),User.getContraseña(),roles);
+        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken("Usuario",null,roles);
         SecurityContextHolder.getContext().setAuthentication(auth);
 
     }

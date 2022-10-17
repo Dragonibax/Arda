@@ -11,15 +11,15 @@ package com.escom.ipn.Arda.Modelos;
  */
 public class JsonResponse {
     private String Error;
-    private Object data;
+    private Object body;
     private String Mensaje;
 
     public JsonResponse(String Error) {
         this.Error = Error;
     }
 
-    public JsonResponse(Object data, String Mensaje) {
-        this.data = data;
+    public JsonResponse(Object body, String Mensaje) {
+        this.body = body;
         this.Mensaje = Mensaje;
     }
 
@@ -31,12 +31,12 @@ public class JsonResponse {
         this.Error = Error;
     }
 
-    public Object getData() {
-        return data;
+    public Object getBody() {
+        return body;
     }
 
-    public void setData(Object data) {
-        this.data = data;
+    public void setBody(Object body) {
+        this.body = body;
     }
 
     public String getMensaje() {

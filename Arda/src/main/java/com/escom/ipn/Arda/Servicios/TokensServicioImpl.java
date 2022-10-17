@@ -5,6 +5,7 @@
  */
 package com.escom.ipn.Arda.Servicios;
 
+import com.escom.ipn.Arda.Modelos.Terrarios;
 import com.escom.ipn.Arda.Modelos.Usuarios;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
@@ -27,21 +28,23 @@ public class TokensServicioImpl implements ITokensServicio {
     
     private final String SECRETO = "KappaIsLoveForSigmaAndNothingCanChangheThat";
     private final String USER = "User";
+    private final String TERRARIO = "Terrario";
     private final String PREFIX = "Bearer ";
     private final JwtBuilder TOKENBUILDER = Jwts.builder();
     private final JwtParserBuilder PARSERBUILDER = Jwts.parserBuilder();
     private final SignatureAlgorithm FIRMA = SignatureAlgorithm.HS256;
     private SecretKey key;
+
     
     @Override
-    public String crearToken(Usuarios User) {
+    public String crearTokenUsuario(Usuarios User) {
+        User.setContraseña("");
         key = Keys.hmacShaKeyFor(SECRETO.getBytes());
         String token = TOKENBUILDER.setSubject(User.getNombre())
                 .claim(USER, User)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis()+86400000))
                 .signWith(key, FIRMA).compact();
-        System.out.print(token);
         return PREFIX + token;
     }
 
@@ -50,7 +53,7 @@ public class TokensServicioImpl implements ITokensServicio {
         String token = JWT.replace(PREFIX, "");
         key = Keys.hmacShaKeyFor(SECRETO.getBytes());
         Jws<Claims> tokenparseado = PARSERBUILDER.setSigningKey(key).build().parseClaimsJws(token);
-        return tokenparseado.getBody().get(USER)!=null;
+        return tokenparseado.getBody().get(USER)!=null||tokenparseado.getBody().get(TERRARIO)!=null;
     }
 
     @Override
@@ -60,6 +63,24 @@ public class TokensServicioImpl implements ITokensServicio {
         Jws<Claims> tokenparseado = PARSERBUILDER.setSigningKey(key).build().parseClaimsJws(token);
         Map<String, String> user = (Map<String, String>) tokenparseado.getBody().get(USER);
         return new Usuarios(user.get("id"), user.get("correo"), user.get("contraseña"), user.get("nombre"));
+    }
+
+    @Override
+    public String crearTokenTerrario(Terrarios terrario) {
+        key = Keys.hmacShaKeyFor(SECRETO.getBytes());
+        String token = TOKENBUILDER.setSubject(terrario.getMac())
+                .claim(TERRARIO, terrario).setExpiration(null)
+                .signWith(key, FIRMA).compact();
+        return PREFIX + token;
+    }
+
+    @Override
+    public Terrarios getTerrarioFromToken(String JWT) {
+        String token = JWT.replace(PREFIX, "");
+        key = Keys.hmacShaKeyFor(SECRETO.getBytes());
+        Jws<Claims> tokenparseado = PARSERBUILDER.setSigningKey(key).build().parseClaimsJws(token);
+        Map<String,String> terrario = (Map<String,String>) tokenparseado.getBody().get(TERRARIO);
+        return new Terrarios(terrario.get("id"),terrario.get("ubicacion"), terrario.get("altura"), terrario.get("iluminacion_tipo"), terrario.get("usuarios_id"));
     }
     
 }

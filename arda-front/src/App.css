@@ -1,0 +1,166 @@
+.btn-ArdaGreen{
+    background-color: rgb(0, 173, 0);
+    cursor: pointer;
+    color: white;
+    transition: color .15s ease-in-out,
+    background-color .15s ease-in-out,
+    border-color .15s ease-in-out
+    box-shadow .15s ease-in-out;
+}
+
+.btn-ArdaGreen:hover{
+    color: #fff;
+    background-color: rgb(0, 135, 0);
+    border-color: rgb(0, 135, 0);
+}
+
+.title-Arda{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.title-Arda:first-letter{
+    text-transform: uppercase;
+    font-style: italic;
+    color: rgb(0, 175, 0);
+    font-size: 130%;
+}
+
+.cursor{
+    width: 500px;
+    height: 500px;
+    border: 1px solid #ffffff;
+    background: rgb(0, 255, 64);
+    border-radius: 50%;
+    position: fixed;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    /*clip-path: polygon(33% 47%, 3% 24%, 40% 35%, 49% 4%, 55% 36%, 99% 21%, 58% 49%, 98% 83%, 55% 65%, 49% 98%, 35% 64%, 0% 85%);*/
+    z-index: -5;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #000;
+    min-height: 100vh;
+}
+.conta{
+    position: fixed;
+    overflow: hidden;
+    height: 100vh;
+    animation: animate 1s linear infinite;
+    z-index: -1;
+}
+@keyframes animate{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(10deg);
+    }
+}
+.rowk{
+    display: inline-flex;
+    margin-left: -50px;
+    margin-top: -32px;
+    overflow: hidden;
+}
+.rowk:nth-child(even){
+    margin-left: 1px;
+}
+.hexagon{
+    position: relative;
+    height: 110px;
+    width: 100px;
+    background: rgb(14, 13, 13);
+    margin: 1px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: .5s;
+}
+.hexagon:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    background: rgba(24, 23, 23, 0.2);
+}
+.hexagon:hover{
+    transition: 0s;
+    background: #0f0;
+}
+
+/*
+logins
+*/
+
+.Sablogins{
+    margin-top: 20vh;
+    padding: 10vh;
+    background-image: url("Imgs/hojalogin.jpg");
+    background-size: cover;
+    width: 80%;
+    height: 55vh;
+    border: #fff solid;
+    border-radius: 10vh;
+}
+.SabtitleLogins{
+    color:rgb(255, 255, 255);
+    font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+
+}
+
+
+/*
+cosas del carrusel
+*/
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .SABswiper{
+        
+    margin: 0 auto;
+    width: 80vh;
+    height: 40vh !important;
+
+
+  }

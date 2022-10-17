@@ -19,7 +19,7 @@ import com.escom.ipn.Arda.filtros.JWTFilter;
  */
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -27,6 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .addFilterAfter(new JWTFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests().antMatchers("/api/public/**").permitAll()
                 .anyRequest().authenticated();
+        http.cors();
     }
-    
+
 }
