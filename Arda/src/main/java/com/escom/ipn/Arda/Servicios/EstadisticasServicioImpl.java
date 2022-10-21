@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author DEZKS
+ * @author Sab
  */
 @Service
 public class EstadisticasServicioImpl implements IEstadisticasServicio{
