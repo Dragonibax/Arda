@@ -9,6 +9,7 @@ import com.escom.ipn.Arda.Modelos.Usuarios;
 import com.escom.ipn.Arda.Repositorios.IUsuariosRepositorio;
 import com.escom.ipn.Arda.Servicios.Seguridad.IEncriptacionServicio;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
@@ -23,10 +24,13 @@ public class UsuariosServicioImpl implements IUsuariosServicio{
     
     @Autowired
     private IEncriptacionServicio encriptador;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     
     @Override
     public void crearUsuario(Usuarios User) {
-       User.setContraseña(encriptador.Encriptar(User.getContraseña()));
+       User.setContraseña(passwordEncoder.encode(User.getContraseña()));
        repositorio.save(User);
     }
 
@@ -37,8 +41,8 @@ public class UsuariosServicioImpl implements IUsuariosServicio{
 
     @Override
     public Boolean verificaContraseña(Usuarios User) {
-        User.setContraseña(encriptador.Encriptar(User.getContraseña()));
-        return repositorio.findByCorreo(User.getCorreo()).getContraseña().equals(User.getContraseña());
+        Usuarios db = repositorio.findByCorreo(User.getCorreo());
+        return passwordEncoder.matches(User.getContraseña(), db.getContraseña());
     }
 
     @Override

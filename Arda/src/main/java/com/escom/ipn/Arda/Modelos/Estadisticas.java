@@ -5,6 +5,9 @@
  */
 package com.escom.ipn.Arda.Modelos;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -14,74 +17,16 @@ import org.springframework.data.mongodb.core.mapping.Field;
  * @author DEZKS
  */
 @Document("Estadisticas")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Estadisticas {
     
     @Id
     private String id;
     private String terrario_id;
-    
-    private String humedad;
-    private String iluminacion;
+    private float humedad;
     private String hora;
-    private String temperatura;
-
-    public Estadisticas() {
-    }
-
-    public Estadisticas(String id, String Humedad, String Iluminacion, String Hora, String Temperatura) {
-        this.id = id;
-        this.humedad = Humedad;
-        this.iluminacion = Iluminacion;
-        this.hora = Hora;
-        this.temperatura = Temperatura;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getTerrario_id() {
-        return terrario_id;
-    }
-
-    public void setTerrario_id(String terrario_id) {
-        this.terrario_id = terrario_id;
-    }
-
-    public String getHumedad() {
-        return humedad;
-    }
-
-    public void setHumedad(String humedad) {
-        this.humedad = humedad;
-    }
-
-    public String getIluminacion() {
-        return iluminacion;
-    }
-
-    public void setIluminacion(String iluminacion) {
-        this.iluminacion = iluminacion;
-    }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
-
-    public String getTemperatura() {
-        return temperatura;
-    }
-
-    public void setTemperatura(String temperatura) {
-        this.temperatura = temperatura;
-    }
+    private float temperatura;
     
 }

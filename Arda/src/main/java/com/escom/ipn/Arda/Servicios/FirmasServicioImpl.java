@@ -22,7 +22,10 @@ public class FirmasServicioImpl implements IFirmasServicio{
 
     @Override
     public Firmas guardarFirma(String terrario_id, String token) {
-        Firmas firma = new Firmas(token, Boolean.FALSE, terrario_id);
+        Firmas firma = new Firmas();
+        firma.setReclamada(Boolean.FALSE);
+        firma.setTerrario_id(terrario_id);
+        firma.setFirma(token);
         return repositorio.insert(firma);
     }
 
