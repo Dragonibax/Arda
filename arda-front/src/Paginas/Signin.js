@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Button, Col, Container, FloatingLabel, Form, Row, FormLabel } from 'react-bootstrap';
 import UserContext from '../Context/UserContext';
 import ApiPublic from '../Servicios/apiPublica';
+import Swal from 'sweetalert2';
 
 function Signin(props) {
     const [correo, setCorreo] = useState("");
@@ -18,9 +19,21 @@ function Signin(props) {
         ApiPublic.Registrar(data)
         .then(response=>{
             setSesion(response.data.body)
+            Swal.fire({
+                icon: 'success',
+                title: 'Registrado con exito',
+                text: '---',               
+              })
         })
         .catch(error=>{
             console.log(error.response)
+            Swal.fire({
+                icon: 'error',
+                title: 'El correo ya existe',
+                text: '---',               
+              })
+
+
         })
     }
     
