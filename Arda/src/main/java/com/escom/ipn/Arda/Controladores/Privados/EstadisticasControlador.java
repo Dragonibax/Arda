@@ -5,9 +5,12 @@
  */
 package com.escom.ipn.Arda.Controladores.Privados;
 
+import com.escom.ipn.Arda.DTO.EstadisticasDTO;
 import com.escom.ipn.Arda.Modelos.Estadisticas;
 import com.escom.ipn.Arda.Modelos.JsonResponse;
 import com.escom.ipn.Arda.Modelos.Terrarios;
+import com.escom.ipn.Arda.Repositorios.IUsuariosRepositorio;
+import com.escom.ipn.Arda.Servicios.EmailsServicio;
 import com.escom.ipn.Arda.Servicios.IEstadisticasServicio;
 import com.escom.ipn.Arda.Servicios.ITokensServicio;
 import java.util.List;
@@ -32,10 +35,11 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.OPTIONS})
 @RequestMapping("/api/private")
 public class EstadisticasControlador {
-    
+
+    @Autowired
+    private EmailsServicio emailService;
     @Autowired
     private IEstadisticasServicio servicioEstadisticas;
-    
     @Autowired
     private ITokensServicio servicioTokens;
     
@@ -55,9 +59,10 @@ public class EstadisticasControlador {
     
     /*agrega una nueva estadistica al historial*/
     @PostMapping("/estadisticas")
-    public ResponseEntity<JsonResponse> postEstadistica(@RequestBody Estadisticas stats, @RequestHeader("Authorization") String token){
+    public ResponseEntity<JsonResponse> postEstadistica(@RequestBody EstadisticasDTO stats, @RequestHeader("Authorization") String token){
         Terrarios terrario = servicioTokens.getTerrarioFromToken(token);
         servicioEstadisticas.registraEstadistica(stats, terrario);
+        emailService.sendAlert(stats.getTipo_alerta(),terrario);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }

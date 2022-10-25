@@ -5,6 +5,7 @@
  */
 package com.escom.ipn.Arda.Servicios;
 
+import com.escom.ipn.Arda.DTO.EstadisticasDTO;
 import com.escom.ipn.Arda.Modelos.Estadisticas;
 import com.escom.ipn.Arda.Modelos.Terrarios;
 import com.escom.ipn.Arda.Repositorios.IEstadisticasRepositorio;
@@ -47,8 +48,12 @@ public class EstadisticasServicioImpl implements IEstadisticasServicio{
     }
 
     @Override
-    public Estadisticas registraEstadistica(Estadisticas recoleccion, Terrarios terrario) {
+    public Estadisticas registraEstadistica(EstadisticasDTO recoleccioDTO, Terrarios terrario) {
+        Estadisticas recoleccion = new Estadisticas();
         recoleccion.setTerrario_id(terrario.getId());
+        recoleccion.setHora(recoleccioDTO.getHora());
+        recoleccion.setHumedad(recoleccioDTO.getHumedad());
+        recoleccion.setTemperatura(recoleccioDTO.getTemperatura());
         return repositorio.insert(recoleccion);
     }
     
