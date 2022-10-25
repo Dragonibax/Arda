@@ -16,6 +16,7 @@ function MonitorPrincipal() {
         }, 5000);
         ApiPrivate.VerTerrarios(jwt)
             .then(response => {
+                console.log(response)
                 if(response.data.body){
                     setTerrarios(response.data.body)
                 }
@@ -38,6 +39,7 @@ function MonitorPrincipal() {
                     <h1>Monitor Principal</h1>
                 </Col>
             </Row>
+            <Row>
             {Terrarios.map(
                 (terrario, index) => {
                     return (
@@ -49,6 +51,9 @@ function MonitorPrincipal() {
                     )
                 }
             )}
+        </Row>
+       
+       
         </Container>
     );
 }
