@@ -55,7 +55,6 @@ public class Firmas {
         this.reclamada = reclamada;
     }
 
-    
 
     public String getTerrario_id() {
         return terrario_id;

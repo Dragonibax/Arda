@@ -133,7 +133,12 @@ cosas del carrusel
     text-align: center;
     font-size: 18px;
     background: #fff;
-  
+    
+    min-width: 80vh;
+    min-height: 50vh;
+
+
+    
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -150,17 +155,67 @@ cosas del carrusel
   }
   
   .swiper-slide img {
-    display: block;
+    
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .SABswiper{
-        
-    margin: 0 auto;
-    width: 80vh;
-    height: 40vh !important;
 
+  .SABswiper{       
+    margin: 0 auto;
+
+    width: 80vh;
+    height: 50vh;
 
   }
+
+  /* formato para cada slider*/
+
+.SL1, .SL2, .SL3, .SL4, .SL5, .SL6, .SL7, .SL8, .SL9{
+    
+    color: rgb(255, 255, 255);
+    font-size: 2.5vh;
+    object-fit: cover;
+    background-size: 80vh 60vh;    
+    background-repeat: no-repeat;
+    background-position: center;
+    font-weight: bold;
+    -webkit-text-stroke: .2vh black;
+    text-align: justify;
+    padding: 7vh;
+} 
+
+.SL1{
+    background-image: url("Imgs/Sl1.jpg");
+}
+.SL2{
+    background-image: url("Imgs/Sl2.jpg");
+} 
+
+.SL3{
+    background-image: url("Imgs/Sl3.jpg");
+} 
+
+.SL4{
+    background-image: url("Imgs/Sl4.jpg");
+} 
+
+.SL5{
+    background-image: url("Imgs/Sl5.jpg");
+} 
+
+.SL6{
+    background-image: url("Imgs/Sl6.jpg");
+} 
+
+.SL7{
+    background-image: url("Imgs/Sl7.jpg");
+} 
+
+
+
+.objetivos{
+color: white;
+
+}
