@@ -110,7 +110,7 @@ function Inicio() {
             <img className='obj2'></img>
         </figure>
         <div className="contenido-card">
-            <h3>Objetivo</h3>
+            <h3 className='Comomolestan'>Objetivo</h3>
             <p>ARDA tiene como objetivo brindarle una plataforma sencilla e intuitiva para el monitereo de los sistemas ambientales de su terrario certificado</p>
         </div>
     </div>
