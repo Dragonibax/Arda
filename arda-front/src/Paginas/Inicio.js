@@ -80,43 +80,50 @@ function Inicio() {
 
       </Swiper>
 
-      </div>
+        </div>
 
-        <div className='objetivos'>
-        <br></br><br></br><br></br><br></br>    
-        <h2>
-            OBJETIVO
-        </h2>
-        <div>ARDA tiene como objetivo brindarle una plataforma sencilla e intuitiva para el monitereo de los sistemas ambientales de su terrario certificado</div>
-        <h1>
-            ¿Qué necesitas para usar ARDA?
-        </h1>
-        <ul>
-    <li>Crear una cuenta.</li>
-    <li>Contar con un celular o computadora con conexión a internet y acceso a un navegador web.</li>
-    <li>Contar con un terrario certificado.</li>
-    <li>Tener registrado tu correo electrónico válido para recibir notificaciones relacionadas a tu terrario.</li>
-        </ul>
-        <h1>
-            ¿Qué puedes hacer con esta app? 
-        </h1>
-        <ul>
-    Funcionalidades:
-    ARDA....
-    <li>Muestra de manera practica en cualquier momento los valores ambientales de su terrario a través de la aplicación web.</li>
-    <li>Genera graficas en tiempo real de los valores de humedad y temperatura</li>
-    <li>Muestra recomendaciones sobre los cuidados basicos de una iguana, asi como informacion general sobre estas</li>
-    <li>Te notificara cada que exista una anomalia dentro de tu terrario</li>           
-    RECORDATORIO
-    <li>Recuerda que la cobertura del servicio dependerá de tu conexión a internet.</li>
-        </ul>  
+        <div className='title-cards'>
+            <h2>Sobre ARDA</h2>
+        </div>
+    <div className='container-card'>
+        
+    <div className='card'>
+        <figure>
+            <img className='origen'></img>
+        </figure>
+        <div className='contenido-card'>
+            <h3>Origen</h3>
+            <p> Mas alla del gusto en los ultimos años la iguana verde en su etapa de cria
+                ha comenzado a volverse un prospecto de mascota ideal para los niños debido a su brillante y muy 
+                atractivo color verde y carácter dócil. No obstante solemos olvidar que tener una iguana no es lo
+                mismo que tener a un perro, gato o pez. Las iguanas requieren de constantes acondicionamientos 
+                en cuanto a la iluminacion, temperatura y humedad en su "habitat" que suele ser el aspecto mas dificil
+                de mantener al momento de cuidarla.</p>
+        </div>
+    </div>
+    <div className='card'>
+        <figure>
+            <img className='obj2'></img>
+        </figure>
+        <div className="contenido-card">
+            <h3>Objetivo</h3>
+            <p>ARDA tiene como objetivo brindarle una plataforma sencilla e intuitiva para el monitereo de los sistemas ambientales de su terrario certificado</p>
+        </div>
+    </div>
+    <div className="card">
+        <figure>
+            <img className='mision' ></img>
+        </figure>
+        <div className="contenido-card">
+            <h3>Mision</h3>
+            <p>Pretendemos ser una aplicación viable y unica para ayudarte a mantener las condiciones 
+                de humedad, iluminación y temperatura prestablecidas en nuestro sistemas, segun los estandares 
+                recomendados para el cuidado de las iguanas sin la constante necesidad de tu intervención
+                para los casos donde no dispongas del tiempo o las condiciones climáticas de tu region sean las adecuadas</p>
+        </div>
+    </div>
+    </div>
           
-          
-        </div> 
-
-
-
-
 
         </Container>
 
