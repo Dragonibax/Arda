@@ -25,6 +25,28 @@
     font-size: 130%;
 }
 
+.PrincipalTitle:first-letter{
+    color: rgb(191, 250, 142);
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+}
+
+.PrincipalTitle{
+    color: white;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: lowercase;
+
+
+}
+
+
+.sabbar{
+width: auto;
+
+}
+
+/*
 .cursor{
     width: 500px;
     height: 500px;
@@ -34,25 +56,34 @@
     position: fixed;
     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
     /*clip-path: polygon(33% 47%, 3% 24%, 40% 35%, 49% 4%, 55% 36%, 99% 21%, 58% 49%, 98% 83%, 55% 65%, 49% 98%, 35% 64%, 0% 85%);*/
+    
+    /*
     z-index: -5;
 }
+*/
 
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+   
 }
 body{
-    background: #000;
+    background: #212529;
     min-height: 100vh;
 }
+
+
+
 .conta{
     position: fixed;
     overflow: hidden;
-    height: 100vh;
+    height: 700vh;
     animation: animate 1s linear infinite;
     z-index: -1;
 }
+
+
+
 @keyframes animate{
     0%{
         filter: hue-rotate(0deg);
@@ -164,8 +195,7 @@ cosas del carrusel
 
   .SABswiper{       
     margin: 0 auto;
-
-    width: 80vh;
+    width: 120vh;
     height: 50vh;
 
   }
@@ -184,10 +214,88 @@ cosas del carrusel
     -webkit-text-stroke: .2vh black;
     text-align: justify;
     padding: 7vh;
+    background-color: rgba(3, 124, 3, 0.5);
 } 
+
+.lineaanimada{
+    width: 60vh;
+    height: 20vh;
+    background-color: green;
+    padding-top: 5vh;
+    position: fixed;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    z-index: -5;
+
+}
+@keyframes example {
+    0%   {background-color:green; left:-40vh; top:15vh;}
+    5%   {background-color:green; left:-30vh; top:15vh;}
+    10%   {background-color:green; left:-20vh; top:15vh;}
+    15%   {background-color:green; left:-10vh; top:15vh;}
+    20%   {background-color:green; left:0vh; top:15vh;}
+    25%  {background-color:green; left:10vh; top:15vh;}
+    30%   {background-color:green; left:20vh; top:15vh;}
+    35%   {background-color:green; left:30vh; top:15vh;}
+    40%   {background-color:green; left:40vh; top:15vh;}
+    45%   {background-color:green; left:50vh; top:15vh;}
+    50%  {background-color:green; left:60vh; top:15vh;}
+    55%   {background-color:green; left:70vh; top:15vh;}
+    60%   {background-color:green; left:80vh; top:15vh;}
+    65%   {background-color:green; left:90vh; top:15vh;}
+    70%   {background-color:green; left:100vh; top:15vh;}
+    75%  {background-color:green; left:110vh; top:15vh;}
+    80%   {background-color:green; left:120vh; top:15vh;}
+    85%   {background-color:green; left:130vh; top:15vh;}
+    90%   {background-color:green; left:140vh; top:15vh;}
+    95%   {background-color:green; left:150vh; top:15vh;}
+    100% {background-color:green; left:160vh; top:15vh;}
+  }
+
+  .lineaanimada2{
+    width: 60vh;
+    height: 20vh;
+    background-color: green;
+    padding-top: 5vh;
+    position: fixed;
+    animation-name: example2;
+    animation-duration: 3s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+    z-index: -5;
+
+}
+@keyframes example2 {
+    0%   {background-color:green; left:-40vh; top:60vh;}
+    5%   {background-color:green; left:-30vh; top:60vh;}
+    10%   {background-color:green; left:-20vh; top:60vh;}
+    15%   {background-color:green; left:-10vh; top:60vh;}
+    20%   {background-color:green; left:0vh; top:60vh;}
+    25%  {background-color:green; left:10vh; top:60vh;}
+    30%   {background-color:green; left:20vh; top:60vh;}
+    35%   {background-color:green; left:30vh; top:60vh;}
+    40%   {background-color:green; left:40vh; top:60vh;}
+    45%   {background-color:green; left:50vh; top:60vh;}
+    50%  {background-color:green; left:60vh; top:60vh;}
+    55%   {background-color:green; left:70vh; top:60vh;}
+    60%   {background-color:green; left:80vh; top:60vh;}
+    65%   {background-color:green; left:90vh; top:60vh;}
+    70%   {background-color:green; left:100vh; top:60vh;}
+    75%  {background-color:green; left:110vh; top:60vh;}
+    80%   {background-color:green; left:120vh; top:60vh;}
+    85%   {background-color:green; left:130vh; top:60vh;}
+    90%   {background-color:green; left:140vh; top:60vh;}
+    95%   {background-color:green; left:150vh; top:60vh;}
+    100% {background-color:green; left:160vh; top:60vh;}
+  }
+
+
 
 .SL1{
     background-image: url("Imgs/Sl1.jpg");
+    
 }
 .SL2{
     background-image: url("Imgs/Sl2.jpg");

@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 
 // Import Swiper React components
 import { Swiper, SwiperSlide} from "swiper/react";
-import { Navigation, Autoplay, Pagination} from "swiper";  
+import { Navigation, Autoplay, Pagination, FreeMode} from "swiper";  
 
 // Import Swiper styles
 import "swiper/css";
@@ -15,16 +15,20 @@ function Inicio() {
 
    
     return (  
+        
+        
         <Container fluid className="Container-prueba">
-        <p className="Container-prueba">Trabajando...</p>
-
+       
+        <h1 className="PrincipalTitle"> ARDA PROYECT</h1>
         <div className="SABswiper">
         
-        
+
+               
+
         <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
+        
+        loop={true}
+          autoplay={{
           delay: 5000,
           disableOnInteraction: false,
         }}

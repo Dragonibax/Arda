@@ -7,9 +7,10 @@ import UserContext from '../Context/UserContext';
 function Menu(props) {
     const { Loged, closeSesion } = useContext(UserContext);
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark" className='sabbar'>
             <Container fluid>
                 <Navbar.Brand as={Link} to="/">
+                
                     <Row xs={4}>
                         <Col className="d-inline-block align-content-center">
                             <GiTripleClaws/>
@@ -56,7 +57,7 @@ function Menu(props) {
                             : <Nav.Link eventKey={2} as={Link} to="/signin">Crear Usuario</Nav.Link>
                         }
                     </Nav>
-                    
+                
                 </Navbar.Collapse>
             </Container>
         </Navbar>
