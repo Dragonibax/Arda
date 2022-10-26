@@ -9,8 +9,8 @@ function MonitorTerrario({terrario, ubicacion, update}) {
     const {JWT} = useContext(UserContext);
     const [Stats, setStats] = useState([]);
 
-    const dataTemp = [["Point (Sustituir por fecha)","Temperatura"]];
-    const dataHume = [["Point (Sustituir por fecha)","Humedad"]];
+    const dataTemp = [["Fecha)","Temperatura          "]];
+    const dataHume = [["Fecha)","Humedad              "]];
     for(var i=0; i<Stats.length; i++){
         dataTemp.push([i+1,Number(Stats[i].temperatura)])
         dataHume.push([i+1,Number(Stats[i].humedad)])
@@ -32,27 +32,29 @@ function MonitorTerrario({terrario, ubicacion, update}) {
 
     return ( 
         <>
-        <Card>
+        <div className='centercard'>
+        <Card className='cardblanca'>
             <Card.Header as="h5" className="title-Arda">
                 {ubicacion}
             </Card.Header>
-            <Card.Body>
-                <Row xs={1} md={1} lg={2}>
+            <Card.Body className='cardGBody'>
+                <Row className='ancho' xs={1} md={1} lg={2}>
                     <Temperatura data = {dataTemp}/>
                 </Row>
             </Card.Body>
         </Card>
-
-        <Card>
+        <br></br>
+        <Card className='cardblanca'>
             <Card.Header as="h5" className="title-Arda">
                 {ubicacion}
             </Card.Header>
-            <Card.Body>
-                <Row xs={1} md={1} lg={2}>
+            <Card.Body className='cardGBody'>
+                <Row className='ancho' xs={1} md={1} lg={2}>
                     <Humedad data = {dataHume}/>
                 </Row>
             </Card.Body>
         </Card>
+        </div>
         </>
      );
 }

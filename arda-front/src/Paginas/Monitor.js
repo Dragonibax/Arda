@@ -45,7 +45,7 @@ function MonitorPrincipal() {
                     return (
                         <Row key={index}>
                             <Col>
-                                <MonitorTerrario terrario={terrario.id} ubicacion={terrario.ubicacion} update={RenderFrec} />
+                                <MonitorTerrario  terrario={terrario.id} ubicacion={terrario.ubicacion} update={RenderFrec} />
                             </Col>
                         </Row>
                     )
