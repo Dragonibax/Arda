@@ -36,7 +36,9 @@ public class EmailsServicio {
                 message = MESSAGES.DESCRIPCION_TEMPERATURA_ALTA;
                 message = String.format(message,nombre);
                 correo.setFrom(from);
+                correo.setTo(user.get().getCorreo());
                 correo.setSubject(MESSAGES.ALERTA_TEMPERATURA);
+                
                 correo.setText(message);
                 break;
             case 2:

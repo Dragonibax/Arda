@@ -196,9 +196,11 @@ cosas del carrusel
 
 
   .SABswiper{       
-    margin: 0 auto;
-    width: 120vh;
+   /* margin: 0 auto; pa centrar */
+    width: 100%;
+    padding: 0% !important;
     height: 50vh;
+    margin: 0%;
 
   }
   .lineaanimada{
@@ -437,4 +439,5 @@ cosas del carrusel
     margin-left: 10%;
     align-items: center;
     width: 100%;
+
 }

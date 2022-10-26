@@ -19,7 +19,7 @@ function Inicio() {
         
         <Container fluid className="Container-prueba">
        
-        <h1 className="PrincipalTitle"> ARDA PROYECT</h1>
+       
         <div className="SABswiper">
         
 
@@ -80,7 +80,11 @@ function Inicio() {
 
       </Swiper>
 
+
+
         </div>
+
+        <h1 className="PrincipalTitle"> ARDA PROYECT</h1>
 
         <div className='title-cards'>
             <h2>Sobre ARDA</h2>
