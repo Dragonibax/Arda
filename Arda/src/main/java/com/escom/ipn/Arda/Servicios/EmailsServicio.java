@@ -23,7 +23,9 @@ public class EmailsServicio {
     @Value("${email.username}")
     private String from;
 
-    public void sendAlert(int alertType, Terrarios terrario) {
+    public void sendAlert(String alertTypeS, Terrarios terrario) {
+        
+        int alertType=Integer.parseInt(alertTypeS);
         if(alertType==0){
             return;
         }

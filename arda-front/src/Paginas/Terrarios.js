@@ -1,11 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, FloatingLabel, Form, Row, FormLabel} from 'react-bootstrap';
 import Terrario from '../Componentes/Terrarios/Card';
 import UserContext from '../Context/UserContext';
 import ApiPrivate from '../Servicios/apiPrivada'
 import { IoIosAddCircle } from 'react-icons/io';
+import Swal from 'sweetalert2';
+
 
 function Terrarios(props) {
+
+    const [ubicacion, setubicacion] = useState("");
+    const [altura, setaltura] = useState("");
+    const [caniguanas, setcaniguanas] = useState("");
+    
+
     const { JWT, closeSesion } = useContext(UserContext);
     const [Terrarios, setTerrarios] = useState([]);
     const jwt = JWT;
@@ -22,20 +30,27 @@ function Terrarios(props) {
                     closeSesion();
                 }
             })
-    }, []);
+    }, []
+    
+    );
+
 
     return (
         <Container>
             <Row>
                 <Col>
-                    <h1>Lista de Terrarios Disponibles</h1>
+                    <h1 >Lista de Terrarios Disponibles</h1>
                 </Col>
                 <Col md={3} lg={3}>
-                    <Button>
-                        <IoIosAddCircle />
+                    <Button  href="/Masterrario"> 
+                   
+                    <IoIosAddCircle  />
                         {' '}
+                        
                         Agregar
                     </Button>
+
+
                 </Col>
             </Row>
             <Row xs={1} md={3}>

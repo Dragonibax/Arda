@@ -15,8 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document("Terrarios")
 public class Terrarios {
     @Id
-    private String id;
-    
+    private String id;    
     private String ubicacion;
     private String altura;
     private String iluminacion_tipo;

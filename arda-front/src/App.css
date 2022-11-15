@@ -66,13 +66,17 @@ width: auto;
 *{
     margin: 0;
     padding: 0;
-    color: white;
    
+   
+}
+h1, h2{
+    color:white;
 }
 body{
     background: #212529;
     min-height: 100vh;
 }
+
 
 
 
@@ -132,14 +136,15 @@ logins
 */
 
 .Sablogins{
-    margin-top: 20vh;
-    padding: 10vh;
+    margin-top: 15vh;
+    padding: 5vh;
     background-image: url("Imgs/hojalogin.jpg");
     background-size: cover;
     width: 80%;
     height: 55vh;
     border: #fff solid;
     border-radius: 10vh;
+    text-align: center;
 }
 .SabtitleLogins{
     color:rgb(255, 255, 255);
@@ -147,9 +152,32 @@ logins
     display: flex;
     justify-content: center;
     align-items: center;
-   
 
+}
 
+.Sabterrarios{
+    margin-top: 5vh;
+    padding: 5vh;
+    background-image: url("Imgs/hojalogin.jpg");
+    background-size: cover;
+    width: 80%;
+    height: 75vh;
+    border: #fff solid;
+    border-radius: 10vh;
+    text-align: center;
+}
+.Sabtitleterrario{
+    color:rgb(255, 255, 255);
+    font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Form.Control, .FloatingLabel{
+    color: black;
+    font-size: 2vh;
 }
 
 
@@ -223,7 +251,7 @@ cosas del carrusel
     text-align: left;
     padding: 7vh;
     /*background-color: rgba(3, 124, 3, 0.5);*/
-    -webkit-text-stroke: .2vh  rgb(0, 0, 0);
+    -webkit-text-stroke: .13vh  rgb(0, 0, 0);
     background-color: rgb(0, 0, 0);
 
 } 
@@ -268,6 +296,7 @@ cosas del carrusel
 	display: flex;
 	max-width: 2000px;
 	margin: auto;
+    color: rgb(255, 255, 255);
 }
 .title-cards{
 	width: 100%;
@@ -277,6 +306,7 @@ cosas del carrusel
 	margin-top: 20px;
 	text-align: center;
 	color: #7a7a7a;
+    color: rgb(255, 255, 255);
 }
 .card{
 	width: 70vh;
@@ -287,6 +317,7 @@ cosas del carrusel
 	box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
 	transition: all 400ms ease-out;
 	cursor: default;
+    color: rgb(255, 255, 255);
 }
 .card:hover{
 	box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.4);
@@ -425,7 +456,7 @@ cosas del carrusel
     0% {transform:translate( -20vh, 20vh) }
     33% {transform:translate( 120vh, 20vh) }
     66% {transform:translate( -20vh, 20vh) }
-    100% {transform:translate( 120vh, 20vh) }
+    100% {transform:translate( 160vh, 20vh) }
   }
 
   .lineaanimada2{
@@ -445,6 +476,6 @@ cosas del carrusel
     0% {transform:translate( -20vh, 60vh) }
     33% {transform:translate( 120vh, 60vh) }
     66% {transform:translate( -20vh, 60vh) }
-    100% {transform:translate( 120vh, 60vh) }
+    100% {transform:translate( 160vh, 60vh) }
   }
 

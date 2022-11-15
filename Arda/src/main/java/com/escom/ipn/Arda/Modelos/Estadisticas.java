@@ -25,8 +25,8 @@ public class Estadisticas {
     @Id
     private String id;
     private String terrario_id;
-    private float humedad;
+    private String humedad;
     private String hora;
-    private float temperatura;
-    
+    private String temperatura;
+    private String tipo_alerta;    
 }

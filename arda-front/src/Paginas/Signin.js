@@ -54,10 +54,7 @@ function Signin(props) {
                         <Form.Control type="user" placeholder="Nombre de usuario" value={usuario} onChange={(e) =>setUsuario(e.target.value)}/>
                     </FloatingLabel>
 
-                    <FloatingLabel
-                        label="Correo Electronico"
-                        className="mb-3"
-                    >
+                    <FloatingLabel label="Correo Electronico"className="mb-3">
                         <Form.Control type="email" placeholder="Usuario@ejemplo.com" value={correo} onChange={(e) =>setCorreo(e.target.value)}/>
                     </FloatingLabel>
 

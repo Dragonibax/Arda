@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const base = axios.create({
-    baseURL: 'http://localhost:9898/api/public/'
+    
+    baseURL: 'https://ardaapi-arda.azuremicroservices.io/api/public/'
 })
 
 const IniciarSesion = (payload) => base.post("iniciarsesion", payload)

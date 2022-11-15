@@ -29,15 +29,16 @@ function Menu(props) {
                             : <Nav.Link href="#pricing">Aquirir un terrario</Nav.Link>}
                         {Loged
                             ?
-                            <NavDropdown title="Administar Iguanas" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Registar Iguana</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Ver iguanas</NavDropdown.Item>
-                            </NavDropdown>
+                            <Nav.Link as={Link} to="/Contacto">Contactos</Nav.Link>
                             : <Nav.Link href="#action">Contactenos</Nav.Link>
                         }
                         {Loged
                             ?
-                            <Nav.Link as={Link} to="/terrarios">Administrar Terrarios</Nav.Link>
+                   
+                            <NavDropdown title="Terrarios" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/terrarios">Ver Terraios</NavDropdown.Item>
+                                <NavDropdown.Item href="/Masterrario">Añadir Terrarios</NavDropdown.Item>
+                            </NavDropdown>
                             : ""
                         }
                     </Nav>
@@ -65,3 +66,6 @@ function Menu(props) {
 }
 
 export default Menu;
+
+//<Nav.Link as={Link} to="/terrarios">Administrar Terrarios</Nav.Link>
+         

@@ -7,8 +7,8 @@ import lombok.Data;
 @Builder
 public class EstadisticasDTO {
     private String terrario_id;
-    private float humedad;
+    private String humedad;
     private String hora;
-    private float temperatura;
-    private int tipo_alerta;
+    private String temperatura;
+    private String tipo_alerta;
 }

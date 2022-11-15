@@ -6,6 +6,7 @@ import Signin from '../Paginas/Signin';
 import UserContext from '../Context/UserContext';
 import Terrarios from '../Paginas/Terrarios';
 import MonitorPrincipal from '../Paginas/Monitor';
+import Masterrario from '../Paginas/Masterrario';
 
 function Router(props) {
     const {Loged} = useContext(UserContext);
@@ -17,6 +18,8 @@ function Router(props) {
                 <Route path="signin" element={!Loged?<Signin />:<Navigate to="/monitor-principal"/>} />
                 <Route path="monitor-principal" element={Loged?<MonitorPrincipal />:<Navigate to="/login"/>}/>
                 <Route path="terrarios" element={Loged?<Terrarios/>:<Navigate to="/login"/>}/>
+                <Route path="masterrario" element={Loged?<Masterrario/>:<Navigate to="/login"/>}/>
+
             </Route>
         </Routes>
     );
