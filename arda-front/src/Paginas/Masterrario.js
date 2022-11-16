@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState  } from 'react';
 import { Button, Col, Container, FloatingLabel, Form, Row, FormLabel } from 'react-bootstrap';
 import UserContext from '../Context/UserContext';
-import ApiPublic from '../Servicios/apiPublica';
-import Swal from 'sweetalert2';
 import ApiPrivate from '../Servicios/apiPrivada';
+import Swal from 'sweetalert2';
 
 
 function Masterrario() {
@@ -13,9 +12,8 @@ function Masterrario() {
     const [altura, setaltura] = useState("");
     const [iluminacion_tipo, setiluminacion] = useState("");
     const [mac, setmac] = useState("");
-    const sabtoken="Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTYWJpbm8iLCJVc2VyIjp7ImlkIjoiNjM1ODY0OTljNWZmNGM2Njg2ODk5NjYxIiwiY29ycmVvIjoic2FiaW5vLnNubUBnbWFpbC5jb20iLCJjb250cmFzZcOxYSI6IiIsIm5vbWJyZSI6IlNhYmlubyJ9LCJpYXQiOjE2NjY3Mzg0MDEsIlRlcnJhcmlvIjp7ImlkIjoiNjM1ODY0Y2NjNWZmNGM2Njg2ODk5NjYyIiwidWJpY2FjaW9uIjoiaW50ZXJpb3IiLCJhbHR1cmEiOiIxMjYgY20iLCJpbHVtaW5hY2lvbl90aXBvIjoiYXJ0aWZpY2lhbCIsInVzdWFyaW9zX2lkIjoiNjM0YzlhYWVjMjIwMjM0OWUzNTZhMjZhIiwibWFjIjoiMTkyLjE2OC4xMjguMTU1In0sImV4cCI6MTY2NjgyNDgwMX0.qRkmgi_72UbPbE5H66-uI0rshUVWihyfsSKnI_PzAxo";
     const [Terrarios, setTerrarios] = useState([]);
-
+    const { JWT } = useContext(UserContext);
 
 const SendData = ()=> {
         const data = {
@@ -25,20 +23,29 @@ const SendData = ()=> {
             mac
         }
 
-        ApiPrivate.RegistrarTerrario(data,sabtoken)
+        ApiPrivate.RegistrarTerrario(data,JWT)
         .then(response => {
             if (response.data.body) {
                 setTerrarios(response.data.body)
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registrado con exito',
+                    text: '---',  
+                    confirmButtonText: '<a href="/terrarios">ok</a>'             
+                  })
             }
         })
 
         .catch(error => {
             console.log(error.response)
+            Swal.fire({
+                icon: 'error',
+                //title: JSON.stringify(error.response.data),
+                title: error.response.data.Error,
+                text: '---',                           
+              })
         })
 }
-
-//const RegistrarTerrario = (payload,header) => base.post("terrarios",payload,{headers:{'Authorization':header}}) 
-//const VerTerrarios = (token) => base.get("terrarios",{headers:{'Authorization': token}})
 
 
 
@@ -78,7 +85,7 @@ const SendData = ()=> {
                 <Col>
                 <Container fluid>
 
-                    <Button variant="ArdaGreen" size="lg" type='button' onClick={SendData}>Añadir terrario</Button>
+                    <Button variant="ArdaGreen" size="lg" type='button'  onClick={SendData} >Añadir terrario </Button>
                 </Container>
                 </Col>
                 <Col lg={4}></Col>

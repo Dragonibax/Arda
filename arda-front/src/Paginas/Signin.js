@@ -29,7 +29,8 @@ function Signin(props) {
             console.log(error.response)
             Swal.fire({
                 icon: 'error',
-                title: 'El correo ya existe',
+                //title: JSON.stringify(error.response.data),
+                title: error.response.data.Error,
                 text: '---',               
               })
 

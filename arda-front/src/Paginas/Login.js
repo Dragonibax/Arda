@@ -20,7 +20,7 @@ function Login(props) {
             setSesion(response.data.body)
             Swal.fire({
                 icon: 'success',
-                title: 'bienvenido',
+                title: 'Bienvenido',
                 text: '---',               
               })
 
@@ -30,7 +30,8 @@ function Login(props) {
             console.log(error.response)   
             Swal.fire({
                 icon: 'error',
-                title: JSON.stringify(error.response.data),
+                //title: JSON.stringify(error.response.data),
+                title: error.response.data.Error,
                 text: '---',               
               })
 
