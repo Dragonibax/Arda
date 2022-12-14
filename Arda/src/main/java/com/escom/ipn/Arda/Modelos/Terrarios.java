@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
- * @author DEZKS
+ * @author Bino
  */
 @Document("Terrarios")
 public class Terrarios {

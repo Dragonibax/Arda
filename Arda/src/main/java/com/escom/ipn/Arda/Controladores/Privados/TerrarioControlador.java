@@ -32,7 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author DEZKS
  */
 @RestController
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.OPTIONS})
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.OPTIONS, RequestMethod.DELETE})
 @RequestMapping("/api/private")
 public class TerrarioControlador {
 
@@ -74,9 +74,14 @@ public class TerrarioControlador {
         return new ResponseEntity(new JsonResponse(respuesta, "OK"), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/terrarios")
-    public void deleteTerrario() {
-
+    @DeleteMapping("/terrarios/{Terrario_ID}")
+    public ResponseEntity<JsonResponse> deleteTerrario(@PathVariable String Terrario_ID) {
+        if(servicioTerrarios.EliminarTerrario(Terrario_ID)){
+            return new ResponseEntity<>(new JsonResponse(null, "El terrario se elimino con exito"),HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(new JsonResponse(null, "El terrario que intentas eliminar ya no existe"),HttpStatus.I_AM_A_TEAPOT);        
+        }
+        
     }
 
     @PatchMapping("/terrarios")

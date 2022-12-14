@@ -9,12 +9,13 @@ import com.escom.ipn.Arda.Modelos.Terrarios;
 import com.escom.ipn.Arda.Modelos.Usuarios;
 import com.escom.ipn.Arda.Repositorios.ITerrariosRepositorio;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
  *
- * @author DEZKS
+ * @author bino
  */
 @Service
 public class TerrariosServicioImpl implements ITerrariosServicio {
@@ -47,6 +48,20 @@ public class TerrariosServicioImpl implements ITerrariosServicio {
     public Terrarios actualizarTerrario(Terrarios actualizado) {
         return repositorio.save(actualizado);
     }
+    
+
+    @Override
+    public Boolean EliminarTerrario(String id) {
+        Optional<Terrarios> terrarioss = repositorio.findById(id);
+        if(terrarioss.isPresent()){
+            repositorio.deleteById(id);
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    
 
     @Override
     public Terrarios obtenerTerrarioporID(String id) {

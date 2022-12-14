@@ -1,8 +1,10 @@
-import React, { useContext } from 'react'
-import { Container, Navbar, Nav, NavDropdown, Row, Col } from 'react-bootstrap'
+import React, { useContext  } from 'react'
+import { Container, Navbar, Nav, NavDropdown, Row, Col,Button } from 'react-bootstrap'
 import { GiTripleClaws } from 'react-icons/gi'
 import { Link } from 'react-router-dom';
 import UserContext from '../Context/UserContext';
+import Swal from "sweetalert2";
+
 
 function Menu(props) {
     const { Loged, closeSesion } = useContext(UserContext);
@@ -46,6 +48,7 @@ function Menu(props) {
                         {Loged
                             ?
                             <Nav.Link eventKey={2} onClick={closeSesion}>
+
                                 Cerrar Sesion
                             </Nav.Link>
                             : <Nav.Link eventKey={2} as={Link} to="/login">

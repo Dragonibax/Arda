@@ -74,7 +74,7 @@ const SendData = ()=> {
                         <Form.Control type="text" placeholder="iluminacion_tipo" value={iluminacion_tipo} onChange={(e) =>setiluminacion(e.target.value)}/>
                     </FloatingLabel>
 
-                    <FloatingLabel label="Direccion MAC del terrario" className="mb-3">
+                    <FloatingLabel label="Numero de serie del terrario" className="mb-3">
                         <Form.Control type="Text" placeholder="MAC" value={mac} onChange={(e) =>setmac(e.target.value)}/>
                     </FloatingLabel>
 
