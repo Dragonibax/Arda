@@ -80,8 +80,6 @@ function Inicio() {
 
       </Swiper>
 
-
-
         </div>
 
         <h1 className="PrincipalTitle"> ARDA PROYECT</h1>
@@ -127,8 +125,23 @@ function Inicio() {
         </div>
     </div>
     </div>
-          
-
+    
+    <div className='title-cards'>
+            <h2>ARDA COMO APLICACION</h2>
+                <div className='card c1'>
+                    <div className='icon'>
+                        <h3>¿Qué necesitas para usar ARDA?</h3>
+                    </div>
+                    <div class="info__description">
+                        <ul>
+                            <li>Crear una cuenta.</li>
+                            <li>Contar con un celular o computadora con conexión a internet y acceso a un navegador web.</li>
+                            <li>Contar con un terrario certificado.</li>
+                            <li>Tener registrado tu correo electrónico válido para recibir notificaciones relacionadas a tu terrario.</li>
+                        </ul>
+                    </div>
+                </div>
+    </div>
         </Container>
 
     );
