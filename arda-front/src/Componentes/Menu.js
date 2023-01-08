@@ -28,11 +28,11 @@ function Menu(props) {
                     <Nav className="me-auto">
                         {Loged
                             ? <Nav.Link as={Link} to={"/monitor-principal"}>Monitor</Nav.Link>
-                            : <Nav.Link href="#pricing">Aquirir un terrario</Nav.Link>}
+                            : <Nav.Link href="adquirir">Aquirir un terrario</Nav.Link>}
                         {Loged
                             ?
-                            <Nav.Link as={Link} to="/Contacto">Contactos</Nav.Link>
-                            : <Nav.Link href="#action">Contactenos</Nav.Link>
+                            <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link>
+                            : <Nav.Link href="contacto">Contactenos</Nav.Link>
                         }
                         {Loged
                             ?

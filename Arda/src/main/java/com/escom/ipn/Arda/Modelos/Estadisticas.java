@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 /**
  *
- * @author DEZKS
+ * @author Drago
  */
 @Document("Estadisticas")
 @Data

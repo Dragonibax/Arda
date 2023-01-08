@@ -482,3 +482,41 @@ cosas del carrusel
     100% {transform:translate( 160vh, 60vh) }
   }
 
+.white-text {
+    color: white;
+    text-align: justify;
+    margin-left: 100px ;
+    margin-top: 20px;
+    margin-right: 150px;
+}
+
+
+.logo{
+    margin-top: 20px;
+    padding: 20px;
+    background-image: url("Imgs/logo.jpg");
+    background-size: cover;
+    width: 550px;
+    height: 350px;
+    scale: 50%;
+    border: #fff solid;
+    text-align: center;
+}
+
+.terra{
+    position: absolute;
+    top: 400px; left: 1200px;
+    background-image: url("Imgs/terra.jpeg");
+    background-size: cover;
+    width: 375px;
+    height: 500px;
+    scale: 100%;
+    border: #fff solid;
+    text-align: right;
+}
+
+.AC{
+
+    font-style: italic !important;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+}

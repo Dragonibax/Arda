@@ -43,19 +43,19 @@ function Inicio() {
       >
       
         <SwiperSlide className='SL1'>
-          Dieta de la iguana<br></br><br></br>
+          Dieta de la iguana<br></br>
           Las iguanas deben seguir una dieta rica en verdura, ya que son herbívoras. Sinn embargo, le podemos ofrecer otro tipo de alimentos. 
           La alimentación de la iguana debe estar conformada por un  75% de verduras ricas en calcio y  25% Fruta
         </SwiperSlide>
         
         <SwiperSlide className='SL2'>
         ---- Cosas que le puedes dar seguido de comer en la proporcion 75%-25% ---
-        <br></br><br></br>
+        <br></br>
           Escarola, Flor calabaza, Remolacha, Perejil, Tomate, Calabacín, Pepino, Pimiento, Judías, Hojas de moztaza,Fresas, Plátano, Melón, Mera
         </SwiperSlide>
         
         <SwiperSlide className='SL3'>
-        Es importante ser consciente de que, debido a su condición herbívora, el organismo de la iguana no está preparado para digerir carne o alimentos de origen animal. Es por eso que se debe evitar ofrecerle comida con proteína animal y grasa.
+        Es importante ser consciente de que, debido a su condición herbívora, el organismo de la iguana no está preparado para digerir carne o alimentos de origen animal.
         </SwiperSlide>
                 
         <SwiperSlide className='SL4'>
@@ -66,7 +66,7 @@ function Inicio() {
         </SwiperSlide>
 
         <SwiperSlide className='SL5'><ul>
-        <li>Lechuga iceberg (lechuga común): tiene un valor nutricional muy bajo y además puede provocar falta de apetito. Se puede incluir en la dieta de forma ocasional y en baja proporción, mezclada con otras verduras.</li>
+        <li>  Las iguanas necesitan para su correcto crecimiento y optimo desarrollo óseo la adición de calcio en su dieta diaria.</li>
         </ul></SwiperSlide>
         
         <SwiperSlide className='SL6'>
@@ -74,8 +74,8 @@ function Inicio() {
         </SwiperSlide>
         
       <SwiperSlide className='SL7'> 
-        Es muy importante que la dieta de la iguana incluya altos porcentajes de vitamina D, calcio y fósforo, para impedir que el reptil contraiga enfermedades como la enfermedad metabólica del hueso o MBD, una de las más frecuentes entre las iguanas verdes en cautividad.
-      </SwiperSlide>
+        Recuerda cambiar la fuente de iluminación UVA/UVB cada seis meses o al menos una vez al año.
+        </SwiperSlide>
 
 
       </Swiper>
@@ -126,7 +126,8 @@ function Inicio() {
     </div>
     </div>
     
-    <div className='title-cards'>
+    <div className="contenido-card">
+
             <h2>ARDA COMO APLICACION</h2>
                 <div className='card c1'>
                     <div className='icon'>
@@ -141,7 +142,9 @@ function Inicio() {
                         </ul>
                     </div>
                 </div>
-    </div>
+
+                </div>       
+
         </Container>
 
     );
