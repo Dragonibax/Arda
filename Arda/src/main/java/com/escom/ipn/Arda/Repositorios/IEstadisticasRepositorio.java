@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 @Service
 public interface IEstadisticasRepositorio extends MongoRepository<Estadisticas,String>{

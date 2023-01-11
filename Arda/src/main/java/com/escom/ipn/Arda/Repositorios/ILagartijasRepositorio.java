@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.repository.Query;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 public interface ILagartijasRepositorio extends MongoRepository<Lagartijas, String>{
 

@@ -9,7 +9,7 @@ import com.escom.ipn.Arda.Modelos.Usuarios;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 public interface IUsuariosServicio {
     public void crearUsuario(Usuarios User);

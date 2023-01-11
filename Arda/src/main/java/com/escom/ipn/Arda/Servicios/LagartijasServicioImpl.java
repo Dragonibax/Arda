@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Bino
+ * @author OnixR
  */
 @Service
 public class LagartijasServicioImpl implements ILagartijasServicio{

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 @Service
 public class EncriptacionServicioImpl implements IEncriptacionServicio {

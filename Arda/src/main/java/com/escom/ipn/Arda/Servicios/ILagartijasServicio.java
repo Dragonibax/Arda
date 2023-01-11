@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 public interface ILagartijasServicio {
     public Lagartijas guardarLagartija(Lagartijas iguana);

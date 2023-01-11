@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 @Document("Usuarios")
 public class Usuarios {

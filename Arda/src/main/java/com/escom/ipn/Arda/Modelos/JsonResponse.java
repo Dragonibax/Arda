@@ -7,7 +7,7 @@ package com.escom.ipn.Arda.Modelos;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 public class JsonResponse {
     private String Error;

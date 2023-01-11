@@ -23,7 +23,7 @@ import java.util.Properties;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 @Configuration
 @EnableWebSecurity

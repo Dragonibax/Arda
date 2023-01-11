@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 public interface ITerrariosServicio {
     public Terrarios registrarTerrario(Terrarios nuevo, Usuarios propietario);

@@ -29,7 +29,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 public class JWTFilter extends OncePerRequestFilter {
 

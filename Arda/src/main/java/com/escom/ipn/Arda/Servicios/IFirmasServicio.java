@@ -9,7 +9,7 @@ import com.escom.ipn.Arda.Modelos.Firmas;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 public interface IFirmasServicio {
     public Firmas guardarFirma(String terrario_id, String firma);

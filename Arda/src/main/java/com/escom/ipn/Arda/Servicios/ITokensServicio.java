@@ -10,7 +10,7 @@ import com.escom.ipn.Arda.Modelos.Usuarios;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 public interface ITokensServicio {
     

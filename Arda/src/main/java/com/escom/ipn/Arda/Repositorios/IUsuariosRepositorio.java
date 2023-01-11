@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 @Service
 public interface IUsuariosRepositorio extends MongoRepository<Usuarios, String>{

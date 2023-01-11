@@ -8,7 +8,7 @@ package com.escom.ipn.Arda.Servicios.Seguridad;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 public interface IEncriptacionServicio {
     

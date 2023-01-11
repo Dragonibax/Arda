@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.repository.Query;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 public interface IFirmasRespositorio extends MongoRepository<Firmas, String>{
 

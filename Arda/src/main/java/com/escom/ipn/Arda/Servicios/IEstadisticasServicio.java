@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author DEZKS
+ * @author OnixR
  */
 public interface IEstadisticasServicio {
     public List<Estadisticas> obtenerEstadisticas(String terrario_id);
